@@ -1,0 +1,242 @@
+.over {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    .administrator {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: left;
+        padding-left: 15px;
+    }
+    .calendar {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        background: white;
+        box-shadow: 2px 4px 24px rgba(25, 40, 57, 0.03);
+        border-radius: 8px;
+        border: 1px #EBECF0 solid;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        display: flex
+    }
+    .export {
+        width: 83px;
+        height: 28px;
+        padding: 4px 10px 4px 10px;
+        border-radius: 8px;
+        border: 1px solid #F1F1F1;
+        background-color: #FFF;
+    }
+    .form-inline {
+        height: 28px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        display: flex
+    }
+    .dropdown {
+        height: 30px;
+        background: white;
+        box-shadow: 2px 4px 24px rgba(25, 40, 57, 0.03);
+        border-radius: 8px;
+        border: 1px #EBECF0 solid;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        display: flex
+    }
+    .filter-wrapper {
+        display: flex;
+        margin-left: 15px;
+    }
+    .sort-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 46%;
+    }
+    .first-card {
+        border: 1px solid #F1F1F1;
+        border-radius: 16px;
+        box-shadow: 2px 4px 24px 0px rgba(0, 0, 0, 0.05);
+    }
+    .second-card {
+        background-color: white;
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid #F1F1F1;
+        box-shadow: 2px 4px 24px 0px rgba(0, 0, 0, 0.05);
+    }
+    .overview {
+        border-radius: 16px;
+        border: 1px solid #F1F1F1;
+        background: #FFF;
+        box-shadow: 2px 4px 24px 0px rgba(0, 0, 0, 0.05);
+    }
+    .earning {
+        height: 327px;
+        border-radius: 16px;
+        border: 1px solid #F1F1F1;
+        box-shadow: 2px 4px 24px 0px rgba(0, 0, 0, 0.05);
+    }
+    .table {
+        .completed {
+            color: #10B981;
+            background-color: #D1FAE5;
+            width: 88px;
+            height: 26px;
+            padding: 2px 8px 2px 8px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+        }
+        .inprogress {
+            color: #3B82F6;
+            background-color: #DBEAFE;
+            width: 89px;
+            height: 26px;
+            padding: 3px 10px 4px 11px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+        }
+        .failed {
+            color: #F43F5E;
+            background-color: #FFE4E6;
+            width: 80px;
+            height: 24px;
+            padding: 2px 8px 2px 8px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0em;
+        }
+    }
+    .trips {
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid #F1F1F1;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .users {
+        border-radius: 16px;
+        border: 1px solid #F1F1F1;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 90%;
+        height: 100%;
+    }
+    .chartjs {
+        ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            li {
+                margin-right: 8%;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                span {
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 100%;
+                    margin-right: 10px;
+                    display: inline-block;
+                    font-size: $font-size-h5;
+                }
+            }
+        }
+    }
+    .charts {
+        border-radius: 16px;
+        border: 1px solid #F1F1F1;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+
+/* Dropdown Button */
+
+.dropbtn {
+    background-color: #fff;
+    color: #42526E;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    width: 83px;
+    height: 28px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #F4F5F9;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #EAEAEA;
+}
+
+.header-search {
+    position: relative;
+    .form-control {
+        padding: -0.656rem 1.8rem;
+        width: 364px;
+        max-width: 100%;
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+    }
+}
