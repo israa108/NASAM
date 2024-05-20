@@ -1,0 +1,341 @@
+<!-- Header -->
+<div class="row g-3 title-top border-b bg-white">
+    <div class="col">
+        <h6 style="margin-bottom: unset">Vehicles</h6>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <div class="ButtonSet">
+            <button nz-button nzType="default"><i class="pi pi-print" style="font-size: 13px; padding-right: 8px; "></i>
+                Print</button>
+            <button nz-button nzType="default"><i class="pi pi-save" style="font-size: 13px; padding-right: 8px; "></i>
+                Save</button>
+            <button nz-button nzType="primary" (click)="open()">Add new vehicle</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Header -->
+<div class="title-top border-b bg-white">
+    <div class="Toolbar">
+        <nz-input-group [nzSuffix]=" suffixIconSearch " style="width: 200px;">
+            <input type="text" nz-input placeholder="Search..." />
+        </nz-input-group>
+        <ng-template #suffixIconSearch>
+            <span nz-icon nzType="search"></span>
+        </ng-template>
+
+        <div class="Right">
+            <button nz-button nzType="default ">
+                Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
+            </button>
+            <button nz-button nzType="default">
+    <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
+</button>
+        </div>
+    </div>
+</div>
+
+<!-- Driver Table -->
+<div class="container-fluid p-2">
+    <div class=" row gy-3">
+        <!-- Chart-1 -->
+        <div class="col-12">
+            <div class="bg-white p-3 m-0 rounded">
+                <nz-table #basicTable [nzData]="listOfData " [nzFrontPagination]="false ">
+                    <thead>
+                        <tr>
+                            <th [nzChecked]="checked "></th>
+                            <th>Vehicle ID</th>
+                            <th>Real-time location</th>
+                            <th>Start Time</th>
+                            <th>End time</th>
+                            <th>Distance travelled</th>
+                            <th>Violated geofences</th>
+                            <th>Fuel consumed</th>
+                            <th>Fuel efficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data ">
+                            <td [nzChecked]="checked "></td>
+                            <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
+                            <td>{{ data.realtime }}</td>
+                            <td>{{ data.start }}</td>
+                            <td>{{ data.end }}</td>
+                            <td>{{ data.distance }}</td>
+                            <td>{{ data.Violated }}</td>
+                            <td>{{ data.consumed }}</td>
+                            <td>{{ data.efficiency }}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Button Add New Vehicles -->
+<nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="true" [nzWidth]="630" [nzVisible]="visible" nzTitle="New Vehicle" [nzFooter]="footerTpl" (nzOnClose)="close()">
+
+    <form nz-form *nzDrawerContent>
+        <nz-tabset nzType="card">
+            <!-- MAIN -->
+            <nz-tab nzTitle="MAIN">
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Name -->
+                        <div class="Input">
+                            <div class="FieldLabel">Name</div>
+                            <input nz-input placeholder="Name" type="text" />
+                        </div>
+
+                        <!-- License plate -->
+                        <div class="Input">
+                            <div class="FieldLabel">License plate</div>
+                            <input nz-input placeholder="License plate" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- VIN -->
+                        <div class="Input">
+                            <div class="FieldLabel">VIN</div>
+                            <input nz-input placeholder="VIN" type="text" />
+                        </div>
+
+                        <!-- Color -->
+                        <div class="Input">
+                            <div class="FieldLabel">Color</div>
+                            <input nz-input placeholder="Color" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- Type -->
+                        <div class="Input">
+                            <div class="FieldLabel">Type</div>
+                            <nz-select [ngModel]="'Type'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                                <nz-option [nzLabel]="'Car'" [nzValue]="'Car'"></nz-option>
+                            </nz-select>
+                        </div>
+
+                        <!-- Subtype -->
+                        <div class="Input">
+                            <div class="FieldLabel">Subtype</div>
+                            <nz-select [ngModel]="'Subtype'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Subtype'" [nzValue]="'Subtype'"></nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- Model -->
+                        <div class="Input">
+                            <div class="FieldLabel">Model</div>
+                            <nz-select [ngModel]="'Model'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Model'" [nzValue]="'Model'"></nz-option>
+                            </nz-select>
+                        </div>
+
+                        <!-- Depot -->
+                        <div class="Input">
+                            <div class="FieldLabel">Depot</div>
+                            <nz-select [ngModel]="'Depot'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Depot'" [nzValue]="'Depot'"></nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- Additional info -->
+                        <div class="Input">
+                            <div class="FieldLabel">Additional info</div>
+                            <nz-select [ngModel]="'Additional info'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Additional info'" [nzValue]="'Additional info'"></nz-option>
+                            </nz-select>
+                        </div>
+                    </div>
+                </div>
+
+            </nz-tab>
+            <!-- SPECIFICATION -->
+            <nz-tab nzTitle="SPECIFICATION">
+                <h6>Size</h6>
+                <p class="text-muted">Payload</p>
+
+                <!-- Size -->
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Length -->
+                        <div class="Input">
+                            <div class="FieldLabel">Length</div>
+                            <input nz-input placeholder="-- mm" type="text" />
+                        </div>
+
+                        <!-- Width -->
+                        <div class="Input">
+                            <div class="FieldLabel">Width</div>
+                            <input nz-input placeholder="-- mm" type="text" />
+                        </div>
+
+                        <!-- Height -->
+                        <div class="Input">
+                            <div class="FieldLabel">Height</div>
+                            <input nz-input placeholder="-- mm" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <div class="Input">
+                            <div class="FieldLabel">Cargo capacity</div>
+                            <input nz-input placeholder="VIN" type="text" />
+                        </div>
+
+                        <div class="Input">
+                            <div class="FieldLabel">Passengers capacity</div>
+                            <input nz-input placeholder="Color" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wheels -->
+                <h6>Wheels</h6>
+                <p class="text-muted">Axie configuration</p>
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Total -->
+                        <div class="Input">
+                            <div class="FieldLabel">Total</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+
+                        <!-- Driver -->
+                        <div class="Input">
+                            <div class="FieldLabel">Driver</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- Tire Size -->
+                        <div class="Input">
+                            <div class="FieldLabel">Tire Size</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+
+                        <!-- Tires number -->
+                        <div class="Input">
+                            <div class="FieldLabel">Tires number</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional information -->
+                <h6>Additional information</h6>
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Manufacture year -->
+                        <div class="Input">
+                            <div class="FieldLabel">Manufacture year</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+
+                        <!-- Chassis number -->
+                        <div class="Input">
+                            <div class="FieldLabel">Chassis number</div>
+                            <input nz-input placeholder="--" type="text" />
+                        </div>
+                    </div>
+                </div>
+
+
+            </nz-tab>
+            <!-- FUEL -->
+            <nz-tab nzTitle="FUEL">
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Fuel Type -->
+                        <div class="Input">
+                            <div class="FieldLabel">Fuel Type</div>
+                            <nz-select [ngModel]="'Type'" style="width: 100%;">
+                                <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                                <nz-option [nzLabel]="'Car'" [nzValue]="'Car'"></nz-option>
+                            </nz-select>
+                        </div>
+
+                        <!-- Fuel grade -->
+                        <div class="Input">
+                            <div class="FieldLabel">Fuel grade</div>
+                            <input nz-input placeholder="License plate" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="MultiInput">
+                        <!-- Cost (per 1 L ) -->
+                        <div class="Input">
+                            <div class="FieldLabel">Cost (per 1 L )</div>
+                            <input nz-input placeholder="VIN" type="text" />
+                        </div>
+
+                        <!-- Tank capacity -->
+                        <div class="Input">
+                            <div class="FieldLabel">Tank capacity</div>
+                            <input nz-input placeholder="Color" type="text" />
+                        </div>
+                    </div>
+                    <!-- Fuel consumption -->
+                    <div class="MultiInput">
+                        <div class="Input">
+                            <div class="FieldLabel">Fuel consumption</div>
+                            <input nz-input placeholder="Car" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </nz-tab>
+
+            <!-- INSURANCE -->
+            <nz-tab nzTitle="INSURANCE">
+                <div class="new">
+                    <div class="MultiInput">
+                        <!-- Insurance policy number -->
+                        <div class="Input">
+                            <div class="FieldLabel">Insurance policy number</div>
+                            <input nz-input placeholder="612335" type="text" />
+                        </div>
+
+                        <!-- Fuel grade -->
+                        <div class="Input">
+                            <div class="FieldLabel">Fuel grade</div>
+                            <input nz-input placeholder="612335" type="text" />
+                        </div>
+                    </div>
+
+                    <!-- Insurance 2 policy number -->
+                    <div class="MultiInput ">
+                        <div class="Input ">
+                            <div class="FieldLabel ">Insurance 2 policy number</div>
+                            <input nz-input placeholder="5125124 " type="text " />
+                        </div>
+
+                        <!-- Fuel grade -->
+                        <div class="Input ">
+                            <div class="FieldLabel ">Fuel grade</div>
+                            <input nz-input placeholder="License plate " type="text " />
+                        </div>
+                    </div>
+                </div>
+            </nz-tab>
+        </nz-tabset>
+    </form>
+
+    <ng-template #footerTpl>
+        <div style="float: right ">
+            <button nz-button style="margin-right: 8px;" (click)="close() ">Cancel</button>
+            <button nz-button nzType="primary" (click)="close() ">Save</button>
+        </div>
+    </ng-template>
+</nz-drawer>

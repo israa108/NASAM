@@ -1,0 +1,26 @@
+<div class="text-start pt-16 pb-16 m-0">
+    <h6 class="m-0 text-black">Notifications</h6>
+</div>
+<mat-divider></mat-divider>
+<mat-nav-list class="notification-list" role="list">
+    <!-- Notification item -->
+    <mat-list-item *ngFor="let n of notifications" class="notific-item" role="listitem" routerLinkActive="open">
+        <mat-icon [color]="n.color" class="notific-icon mr-16" style="color: #A424B4;">{{n.icon}}</mat-icon>
+        <a>
+            <div class="mat-list-text">
+                <h4 class="message">{{n.message}} <small class="time text-muted">{{n.time}}</small></h4>
+                <p class="staus">{{n.staus}}<br></p>
+
+            </div>
+        </a>
+    </mat-list-item>
+</mat-nav-list>
+<!-- <div class="text-center mt-16" *ngIf="notifications.length">
+    <small><a href="#" (click)="seeAll()" style="color: #A424B4;">See all notifications</a></small>
+</div> -->
+<!-- <mat-divider></mat-divider> -->
+
+<!-- <div class="text-end pt-16 pb-16 m-0">
+    <button mat-stroked-button (click)="deleteAll($event)" style="color: #334155;">Delete All</button>
+    <button mat-flat-button style="background-color: #A424B4; color: #fff;">Read All</button>
+</div> -->

@@ -1,0 +1,16 @@
+import {
+  ActivatedRouteSnapshot,
+  ResolveFn,
+  Router,
+  RouterStateSnapshot,
+} from "@angular/router";
+import { inject } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { map, catchError, tap } from "rxjs/operators";
+import { ReportsService } from "./reports.service";
+
+export const ReportsResolver: ResolveFn<any> = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot,
+  reportsService: ReportsService = inject(ReportsService)
+): Observable<{}> => reportsService.Reports();

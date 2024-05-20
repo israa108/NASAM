@@ -1,0 +1,100 @@
+<div class="sidebar-panel">
+    <div id="scroll-area" class="navigation-hold" fxLayout="column">
+        <div class="sidebar-hold">
+            <!-- App Logo -->
+            <div class="branding px-20">
+                <img src="assets/images/logos/logo.png" alt="" class="app-logo" />
+                <span class="app-logo-text">Nasam Tracking</span>
+                <span style="margin: 30px" *ngIf="!layoutConf.sidebarCompactToggle"></span>
+                <!-- <mat-slide-toggle fxHide.lt-md (change)="toggleCollapse()" [checked]="!layoutConf.sidebarCompactToggle" *ngIf="layoutConf.sidebarStyle !== 'compact'"></mat-slide-toggle> -->
+                <svg (click)="toggleCollapse()" *ngIf="layoutConf.sidebarCompactToggle" width="14" height="14" style="cursor: pointer;  margin: 7px;" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.47969 0.959089C7.72459 0.959089 7.96961 1.05256 8.15625 1.23949L12.9418 6.02501C13.3156 6.39888 13.3156 7.00455 12.9418 7.37841L8.15625 12.1639C7.78238 12.5378 7.17671 12.5378 6.80284 12.1639C6.42897 11.7901 6.42897 11.1844 6.80284 10.8105L10.9118 6.70171L6.80224 2.59215C6.42838 2.21828 6.42838 1.61261 6.80224 1.23874C6.98918 1.05181 7.23444 0.959089 7.47969 0.959089Z" fill="#7A869A"/>
+                    <path opacity="0.8" d="M1.73702 0.959089C1.98192 0.959089 2.22694 1.05256 2.41357 1.23949L7.19909 6.02501C7.57296 6.39888 7.57296 7.00455 7.19909 7.37841L2.41357 12.1639C2.0397 12.5378 1.43404 12.5378 1.06017 12.1639C0.686297 11.7901 0.686298 11.1844 1.06017 10.8105L5.16764 6.70171L1.05807 2.59215C0.684205 2.21828 0.684205 1.61261 1.05807 1.23874C1.2465 1.05181 1.49176 0.959089 1.73702 0.959089Z" fill="#7A869A"/>
+                </svg>
+                <svg (click)="toggleCollapse()" *ngIf="!layoutConf.sidebarCompactToggle" width="14" height="14" style="cursor: pointer;" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.52031 12.0409C6.27541 12.0409 6.03039 11.9474 5.84375 11.7605L1.05823 6.97499C0.684365 6.60112 0.684365 5.99545 1.05823 5.62159L5.84375 0.836066C6.21762 0.462197 6.82329 0.462197 7.19716 0.836066C7.57103 1.20993 7.57103 1.8156 7.19716 2.18947L3.08819 6.29829L7.19776 10.4079C7.57162 10.7817 7.57162 11.3874 7.19776 11.7613C7.01082 11.9482 6.76556 12.0409 6.52031 12.0409Z" fill="#7A869A"/>
+                    <path opacity="0.8" d="M12.263 12.0409C12.0181 12.0409 11.7731 11.9474 11.5864 11.7605L6.80091 6.97499C6.42704 6.60112 6.42704 5.99545 6.80091 5.62159L11.5864 0.836066C11.9603 0.462197 12.566 0.462197 12.9398 0.836066C13.3137 1.20993 13.3137 1.8156 12.9398 2.18947L8.83236 6.29829L12.9419 10.4079C13.3158 10.7817 13.3158 11.3874 12.9419 11.7613C12.7535 11.9482 12.5082 12.0409 12.263 12.0409Z" fill="#7A869A"/>
+                </svg>
+            </div>
+
+            <!-- Sidebar user -->
+            <div class="app-user">
+                <div class="app-user-photo">
+                    <img src="assets/images/logos/Image.png" class="mat-elevation-z1" alt="" />
+                    <!-- <span class="count bg-success"></span> -->
+                </div>
+                <!-- Input Dropdown user -->
+                <div class="ml-16">
+                    <span class="app-user-name">
+                         Ahmed Mohsen
+                   <span class="app-user-login">Administrator                     
+                    <i class="fa fa-angle-down" aria-hidden="true" style="transform: translate(30px, -5px); cursor: pointer;" [matMenuTriggerFor]="appUserMenu">
+                     <mat-menu #appUserMenu="matMenu">
+                        <button mat-menu-item>
+                  <span>My Profile</span>
+                    </button>
+                    <button mat-menu-item>
+                  <span>My Subscription</span>
+                </button>
+                    <button mat-menu-item>
+                  <span>Activity Logs</span>
+                </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item>
+                  <span>Language</span>
+                </button>
+                    <button mat-menu-item>
+                  <span>Account Settings</span>
+                </button>
+                    <button mat-menu-item>
+                  <span>Sign Out</span>
+                </button>
+                    </mat-menu>
+                    </i>
+                    </span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- <div class="app-user">
+            <div class="app-user-photo">
+                <img src="assets/images/logos/Image.png" class="mat-elevation-z1" alt="" />
+            </div>
+            <div class="ml-16">
+                <span class="app-user-name mb-4">
+                        Ahmed Mohsen
+            </span> -->
+            <!-- Small button -->
+            <!-- <div class="app-user-controls">
+                    <button class="text-muted" mat-icon-button mat-xs-button [matMenuTriggerFor]="appUserMenu">
+                            <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+                    <mat-menu #appUserMenu="matMenu">
+                        <button mat-menu-item routerLink="">
+                  <span>My Profile</span>
+                </button>
+                        <button mat-menu-item routerLink="">
+                  <span>My Subscription</span>
+                </button>
+                        <button mat-menu-item routerLink="">
+                  <span>Activity Logs</span>
+                </button>
+                        <button mat-menu-item>
+                  <span>Language</span>
+                </button>
+                        <button mat-menu-item>
+                  <span>Account Settings</span>
+                </button>
+                        <button mat-menu-item>
+                  <span>Sign Out</span>
+                </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div> -->
+
+            <!-- Navigation -->
+            <app-sidenav [items]="menuItems" [hasIconMenu]="hasIconTypeMenuItem" [iconMenuTitle]="iconTypeMenuTitle"></app-sidenav>
+        </div>
+    </div>
+</div>

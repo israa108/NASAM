@@ -1,0 +1,27 @@
+.quick-links {
+    list-style: none;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 4px;
+    padding-left: 0;
+    @media (min-width: 992px) {
+        padding-left: 10px;
+    }
+    li {
+        margin-right: 10px;
+        line-height: 1;
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding-right: 10px;
+        }
+        &:last-child {
+            margin-right: 0;
+            border-right: none;
+            a {
+                padding-right: 0;
+            }
+        }
+    }
+}

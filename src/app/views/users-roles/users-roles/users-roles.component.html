@@ -1,0 +1,30 @@
+<p>users-roles works!</p>
+<nz-table #expandTable [nzData]="listOfMapData" nzTableLayout="fixed" [nzFrontPagination]="false">
+    <thead>
+        <tr>
+            <th [nzChecked]="checked"></th>
+            <th>Object Name</th>
+            <th>Speed</th>
+            <th>Last Update</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let data of expandTable.data">
+            <ng-container *ngFor="let item of mapOfExpandedData[data.key]">
+                <tr *ngIf="(item.parent && item.parent.expand) || !item.parent">
+                    <td [nzChecked]="checked"></td>
+
+                    <td [nzIndentSize]="item.level! * 20" [nzShowExpand]="!!item.children" [(nzExpand)]="item.expand" (nzExpandChange)="collapse(mapOfExpandedData[data.key], item, $event)">
+                        {{ item.name }}
+                    </td>
+                    <td>{{ item.speed }}</td>
+                    <td>{{ item.lastUpdate }}</td>
+                    <td>
+                        <nz-badge nzColor="green"></nz-badge>
+                    </td>
+                </tr>
+            </ng-container>
+        </ng-container>
+    </tbody>
+</nz-table>

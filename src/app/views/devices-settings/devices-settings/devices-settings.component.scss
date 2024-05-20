@@ -1,0 +1,120 @@
+::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #A424B4;
+    text-shadow: 0 0 .25px currentcolor;
+}
+
+::ng-deep .ant-tabs-tab:hover {
+    color: #A424B4;
+}
+
+::ng-deep .ant-tabs-tab.ant-tabs-tab-active {
+    border-bottom: 3px solid #A424B4 !important;
+}
+
+::ng-deep .ant-tabs-ink-bar {
+    height: 5px;
+    background: #A424B4 !important;
+}
+
+::ng-deep .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #A424B4;
+    border-color: #A424B4;
+}
+
+::ng-deep .ant-input:placeholder-shown {
+    text-overflow: ellipsis;
+    border-radius: 8px;
+}
+
+::ng-deep.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+::ng-deep .ant-upload.ant-upload-select-picture-card {
+    width: 75px;
+    height: 70px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: border-color .3s;
+}
+
+::ng-deep .ant-btn-primary {
+    color: #fff;
+    border-color: #A424B4;
+    background: #A424B4;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+}
+
+::ng-deep .ant-btn-primary:focus,
+.ant-btn-primary:hover {
+    color: #fff;
+    border-color: #A424B4;
+    background: #A424B4;
+}
+
+::ng-deep .ant-btn {
+    border-radius: 8px;
+}
+
+::ng-deep .p-tag {
+    background: #D1FAE5;
+    color: #10B981;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.4rem;
+    border-radius: 6px;
+}
+
+::ng-deep .ant-input-affix-wrapper {
+    position: relative;
+    min-width: 100%;
+    color: rgba(0, 0, 0, .85);
+    line-height: 1.5715;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    // ition: all .3s;
+    display: inline-flex;
+}
+
+::ng-deep .ant-input-affix-wrapper {
+    position: relative;
+    // width: 200px;
+    min-width: 0;
+    color: rgba(0, 0, 0, .85);
+    line-height: 1.5715;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    transition: all .3s;
+    display: inline-flex;
+}
+
+::ng-deep .ant-table-footer,
+.ant-table-thead>tr>th {
+    color: rgba(0, 0, 0, .85);
+    background: #F1F5F9;
+}
+
+::ng-deep .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 1.6em;
+    background-color: rgba(0, 0, 0, .06);
+    transform: translateY(-50%);
+    transition: background-color .3s;
+    content: '';
+}

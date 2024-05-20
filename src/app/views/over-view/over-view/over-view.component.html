@@ -1,0 +1,388 @@
+<div class="over">
+    <!-- HEADER OVERVIEW -->
+    <div class="row gy-3 gy-md-4 gy-lg-0">
+        <nav class="navbar justify-content-between">
+            <h3 class="font-weight-bold administrator">Welcome back, Nasam</h3>
+            <!-- Dropdown -->
+            <div class="form-inline">
+                <button nz-dropdown [nzDropdownMenu]="menu" mat-stroked-button class="dropdown">
+                            Export                    
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="icon/download">
+                                <path id="basic / download" d="M11.0846 12.2513C11.0846 12.5735 10.8235 12.8346 10.5013 12.8346H3.5013C3.17914 12.8346 2.91797 12.5735 2.91797 12.2513V12.2513C2.91797 11.9291 3.17914 11.668 3.5013 11.668H10.5013C10.8235 11.668 11.0846 11.9291 11.0846 12.2513V12.2513ZM7.18079 10.3218C7.08166 10.4209 6.92094 10.4209 6.82182 10.3218L3.91284 7.41284C3.68555 7.18555 3.68555 6.81705 3.91284 6.58977V6.58977C4.1399 6.3627 4.50796 6.36245 4.73534 6.58919L6.41797 8.26714V1.7513C6.41797 1.42914 6.67914 1.16797 7.0013 1.16797V1.16797C7.32347 1.16797 7.58464 1.42914 7.58464 1.7513V8.26714L9.26727 6.58919C9.49464 6.36245 9.8627 6.3627 10.0898 6.58977V6.58977C10.3171 6.81705 10.3171 7.18555 10.0898 7.41284L7.18079 10.3218Z" fill="#6B778C"/>
+                                </g>
+                                </svg>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                    <ul nz-menu nzSelectable>
+                        <li nz-menu-item>CSV</li>
+                        <li nz-menu-item>PDF</li>
+                    </ul>
+                </nz-dropdown-menu>
+                <!-- Calendar -->
+                <div class="calendar">
+                    <div style="text-align: center; color: #42526E; font-size: 14px; font-weight: 500; line-height: 20px; word-wrap: break-word">10 Sep 2023- 11 Oct 2023</div>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Icon/Navbar/calendar-regular">
+                        <path id="Vector" d="M5.24913 2.3329H8.74913V1.36068C8.74913 1.03863 9.0092 0.777344 9.33246 0.777344C9.65573 0.777344 9.9158 1.03863 9.9158 1.36068V2.3329H10.888C11.746 2.3329 12.4436 3.02925 12.4436 3.88845V11.6662C12.4436 12.5242 11.746 13.2218 10.888 13.2218H3.11024C2.25104 13.2218 1.55469 12.5242 1.55469 11.6662V3.88845C1.55469 3.02925 2.25104 2.3329 3.11024 2.3329H4.08246V1.36068C4.08246 1.03863 4.34253 0.777344 4.6658 0.777344C4.98906 0.777344 5.24913 1.03863 5.24913 1.36068V2.3329ZM2.72135 11.6662C2.72135 11.8801 2.89538 12.0551 3.11024 12.0551H10.888C11.1019 12.0551 11.2769 11.8801 11.2769 11.6662V5.44401H2.72135V11.6662Z" fill="#6B778C"/>
+                    </g>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- USERS CARD-->
+    <div class="row" style="padding: 10px;">
+        <div class="bg-white first-card">
+            <div class="row">
+                <div class="col-12 col-md-4 p-3">
+                    <div class="d-flex">
+                        <div class="wrapper">
+                            <h5 class="mb-2 font-weight-bold">Total Objects</h5>
+                            <p class="mb-2 text-muted"><img src="assets/images/overview/Icon Button.png">+2.4%</p>
+                            <h3 class="p-2 font-weight-bold">2000</h3>
+                        </div>
+                        <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <img src="assets/images/overview/Mini Graph.png" class="me-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-3 border-start border-end">
+                    <div class="d-flex">
+                        <div class="wrapper">
+                            <h5 class="mb-2 font-weight-bold">Total Drivers</h5>
+                            <p class="mb-2 text-muted"><img src="assets/images/overview/Icon Button.png">+2.4%</p>
+                            <h3 class="p-2 font-weight-bold">700</h3>
+                        </div>
+                        <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <img src="assets/images/overview/Mini Graph2.png" class="me-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-3">
+                    <div class="d-flex">
+                        <div class="wrapper">
+                            <h5 class="mb-2 font-weight-bold">Total Drivers</h5>
+                            <p class="mb-2 text-muted"><img src="assets/images/overview/Icon Button.png">+2.4%</p>
+                            <h3 class="p-2 font-weight-bold">700</h3>
+                        </div>
+                        <div class="wrapper my-auto ml-auto ml-lg-4">
+                            <img src="assets/images/overview/Mini Graph2.png" class="me-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION  -->
+    <div class="row gy-4">
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="p-3 second-card">
+                <div class="media d-flex">
+                    <div class="media-body text-left">
+                        <h5 class="mb-2 font-weight-bold text-muted">SOS Alerts</h5>
+                        <h5 class="mb-2 font-weight-bold text-purple">170 <span class="f-right m-2 text-green">+8%</span></h5>
+                    </div>
+                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                        <img src="/assets/images/overview/Alert.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="p-3 second-card">
+                <div class="media d-flex">
+                    <div class="media-body text-left">
+                        <h5 class="mb-2 font-weight-bold text-muted">Speed Alerts
+                        </h5>
+                        <h5 class="mb-2 font-weight-bold text-purple">52<span class="f-right m-2 text-red">-14%</span>
+                        </h5>
+                    </div>
+                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                        <img src="/assets/images/overview/speed.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="p-3 second-card">
+                <div class="media d-flex">
+                    <div class="media-body text-left">
+                        <h5 class="mb-2 font-weight-bold text-muted">Power Cut Alerts
+
+                        </h5>
+                        <h5 class="mb-2 font-weight-bold text-purple">2,300 <span class="f-right m-2 text-green">+5%</span></h5>
+                    </div>
+                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                        <img src="/assets/images/overview/Icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="p-3 second-card">
+                <div class="media d-flex">
+                    <div class="media-body text-left">
+                        <h5 class="mb-2 font-weight-bold text-muted">Geofence Alerts
+                        </h5>
+                        <h5 class="mb-2 font-weight-bold text-purple">170<span class="f-right m-2 text-green">+44%</span>
+                        </h5>
+                    </div>
+                    <div class="wrapper my-auto ml-auto ml-lg-4">
+                        <img src="/assets/images/overview/Icon2.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tracking Overview -->
+    <div class="row gy-3 gy-md-4 gy-lg-0">
+        <div class="col-12 col-md-8">
+            <div class="p-4 overview">
+                <h5 class="card-title mb-2 font-weight-bold text-muted">Tracking Overview</h5>
+                <div class="d-flex flex-column flex-lg-row mb-2">
+                    <div class="data-wrapper d-flex mt-2 mt-lg-0">
+                        <div class="wrapper pr-5">
+                            <p class="mb-2 text-muted">Number of Assets</p>
+                            <div class="d-flex align-items-center">
+                                <h3 class="font-weight-bold mb-0">4000</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-5 col-md-12 d-flex pl-4">
+                    <div class="ml-auto">
+                        <img src="/assets/images/overview/Mini chart.png" alt=""> </div>
+                </div> -->
+                <div class="wrapper border-bottom mb-2 pb-2" style="width: 250px;"></div>
+                <div class="wrapper mb-2">
+                    <div class="d-flex w-100 pt-2 mt-4">
+                        <img src="/assets/images/overview/Dot.svg">
+                        <p class="mb-0 font-weight-semibold pl-4">Online</p>
+                        <div class="wrapper ml-12 d-flex align-items-left">
+                            <span class="ml-1 mb-0">30%</span>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100 pt-2">
+                        <img src="/assets/images/overview/gps.svg">
+                        <p class="mb-0 font-weight-semibold pl-4">GPS not updated</p>
+                        <div class="wrapper ml-12 d-flex align-items-center">
+                            <p class="ml-1 mb-0">30%</p>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100 pt-2">
+                        <div class="dot-indicator bg-danger mr-2"></div>
+                        <img src="/assets/images/overview/offline.svg">
+                        <p class="mb-0 font-weight-semibold pl-4">Offline</p>
+                        <div class="wrapper ml-12 d-flex align-items-center">
+                            <p class="ml-1 mb-0">30%</p>
+                        </div>
+                    </div>
+                    <div class="d-flex w-100 pt-2">
+                        <img src="/assets/images/overview/other.svg">
+                        <p class="mb-0 font-weight-semibold pl-4">Other</p>
+                        <div class="wrapper ml-12 d-flex align-items-center">
+                            <p class="ml-1 mb-0">30%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fleet Locations -->
+        <div class="col-12 col-md-4">
+            <div class="bg-white p-4 earning">
+                <h5 class="card-title mb-2">Fleet Location</h5>
+                <div class="my-auto mx-auto">
+                    <img src="/assets/images/overview/Location.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Recent Trips -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="bg-white trips">
+                <div class="d-flex justify-content-between pt-3 pb-3">
+                    <h4 class="card-title card-title font-weight-bold text-muted">Recent Trips</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-stretched">
+                        <thead>
+                            <tr>
+                                <th>Driver</th>
+                                <th>Location</th>
+                                <th>Mileage</th>
+                                <th>Distance Traveled</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <div class="d-flex align-items-center">
+                                <div class="img-container">
+                                    <img class="img-sm rounded-circle" src="/assets/images/overview/Base1.png" alt="profile image">
+                                </div>
+                                <div class="ps-3">
+                                    <div class="fw-600 pb-1 text-blue">Nasam Driver 01</div>
+                                    <p class="m-0 text-muted font-weight-bold fs-09">Vehicle 01</p>
+                                </div>
+                            </div>
+                            <td>
+                                <p class="font-weight-bold text-muted">6113 Fernanda Flats, New Concetta, NC 97888</p>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center active">
+                                    <div class="font-weight-bold text-muted">150 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center active">
+                                    <div class="font-weight-bold text-muted">200 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="badge completed">Completed</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <div class="d-flex align-items-center">
+                                <div class="img-container">
+                                    <img class="img-sm rounded-circle" src="/assets/images/overview/Base2.png" alt="profile image">
+                                </div>
+                                <div class="ps-3">
+                                    <div class="fw-600 pb-1 text-blue">Nasam Driver 02</div>
+                                    <p class="m-0 text-muted font-weight-bold fs-09">Vehicle 02</p>
+                                </div>
+                            </div>
+                            <td>
+                                <p class="font-weight-bold text-muted">6113 Fernanda Flats, New Concetta, NC 97888</p>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center active">
+                                    <div class="font-weight-bold text-muted">70 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center active">
+                                    <div class="font-weight-bold text-muted">100 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center active">
+                                    <span class="badge inprogress">Inprogress</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <div class="d-flex align-items-center">
+                                <div class="img-container">
+                                    <img class="img-sm rounded-circle" src="/assets/images/overview/Base3.png" alt="profile image">
+                                </div>
+                                <div class="ps-3">
+                                    <div class="fw-600 pb-1 text-blue">Nasam Driver 03</div>
+                                    <p class="m-0 text-muted font-weight-bold fs-09">Vehicle 03</p>
+                                </div>
+                            </div>
+                            <td>
+                                <p class="font-weight-bold text-muted">6113 Fernanda Flats, New Concetta, NC 97888</p>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">0 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">0 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="badge failed">Canceled</span>
+                                </div>
+                        </tr>
+                        <tr>
+                            <div class="d-flex align-items-center">
+                                <div class="img-container">
+                                    <img class="img-sm rounded-circle" src="/assets/images/overview/Base4.png" alt="profile image">
+                                </div>
+                                <div class="ps-3">
+                                    <div class="fw-600 pb-1 text-blue">Nasam Driver 04</div>
+                                    <p class="m-0 text-muted font-weight-bold fs-09">Vehicle 04</p>
+                                </div>
+                            </div>
+                            <td>
+                                <p class="font-weight-bold text-muted">6113 Fernanda Flats, New Concetta, NC 97888</p>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">40 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">50 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="badge inprogress">Inprogress</span>
+                                </div>
+                        </tr>
+                        <tr>
+                            <div class="d-flex align-items-center">
+                                <div class="img-container">
+                                    <img class="img-sm rounded-circle" src="/assets/images/overview/Base5.png" alt="profile image">
+                                </div>
+                                <div class="ps-3">
+                                    <div class="fw-600 pb-1 text-blue">Nasam Driver 05</div>
+                                    <p class="m-0 text-muted font-weight-bold fs-09">Vehicle 05</p>
+                                </div>
+                            </div>
+                            <td>
+                                <p class="font-weight-bold text-muted">6113 Fernanda Flats, New Concetta, NC 97888</p>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">10 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <div class="font-weight-bold text-muted">10 km</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="badge completed">Completed</span>
+                                </div>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Charts -->
+    <div class="row gy-3 gy-md-4 gy-lg-0">
+        <!-- Chart-1 -->
+        <div class="col-12 col-lg-6">
+            <div class="bg-white p-3 m-0 charts">
+                <p-chart type="line" [data]="data" [options]="options"></p-chart>
+            </div>
+        </div>
+        <!-- Chart-2 -->
+        <div class="col-12 col-lg-6">
+            <div class="bg-white p-3 m-0 charts">
+                <p-chart type="bar" [data]="data2" [options]="options"></p-chart>
+            </div>
+        </div>
+    </div>
+</div>

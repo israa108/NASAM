@@ -1,0 +1,44 @@
+<mat-toolbar class="topbar mat-bg-card">
+    <!-- Sidenav toggle button -->
+    <button *ngIf="layoutConf.sidebarStyle !== 'compact'" mat-icon-button id="sidenavToggle" (click)="toggleSidenav()">
+    <mat-icon style="color: #B2B2B2;">menu</mat-icon>
+  </button>
+
+    <!-- INPUT SEARCH -->
+    <span class="p-input-icon-left m-2 header-search">
+    <i class="pi pi-search"></i>
+    <input type="search" class="form-control search-side" placeholder="Search anything" pInputText [(ngModel)]="value"/>
+</span>
+    <span fxFlex></span>
+
+    <!-- Language Switcher -->
+    <!-- <button mat-button [matMenuTriggerFor]="menu">
+    <span class="fi fi-{{currentLang.flag}} mr-8"></span>
+    <span>{{currentLang.name}}</span>
+  </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let lang of availableLangs" (click)="setLang(lang)">
+        <span class="fi mr-8 fi-{{lang.flag}}"></span>
+        <span>{{lang.name}}</span>
+  </button>
+    </mat-menu> -->
+
+    <!-- Search -->
+    <!-- <button mat-icon-button aria-label="Search">
+      <mat-icon style="color: #6F737C;">search</mat-icon>
+         </button> -->
+
+    <!-- Notifications -->
+    <button mat-icon-button aria-label="Notifications">
+      <mat-icon (click)="toggleNotific()" style="color: #6F737C;" matBadge="1" matBadgeColor=""  matBadgeSize="small">notifications_none</mat-icon>
+         </button>
+
+    <!-- arrows-maximize -->
+    <!-- <button mat-icon-button aria-label="arrows-maximize" ng-if="!isFullScreen" ng-click="toggleFullScreen()"> 
+      <mat-icon style="color: #6F737C;">zoom_out_map</mat-icon>
+        </button> -->
+    <button mat-icon-button [fxHide]="true" [fxHide.gt-xs]="false" (click)="toggleFullscreen()">
+          <mat-icon *ngIf="!isFullscreen">fullscreen</mat-icon>
+          <mat-icon *ngIf="isFullscreen">fullscreen_exit</mat-icon>
+      </button>
+</mat-toolbar>
