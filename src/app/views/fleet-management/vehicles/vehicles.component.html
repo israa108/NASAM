@@ -12,7 +12,6 @@
             <button nz-button nzType="primary" (click)="open()">Add new vehicle</button>
         </div>
     </div>
-
 </div>
 
 <!-- Header -->
@@ -42,34 +41,36 @@
         <!-- Chart-1 -->
         <div class="col-12">
             <div class="bg-white p-3 m-0 rounded">
-                <nz-table #basicTable [nzData]="listOfData " [nzFrontPagination]="false ">
-                    <thead>
-                        <tr>
-                            <th [nzChecked]="checked "></th>
-                            <th>Vehicle ID</th>
-                            <th>Real-time location</th>
-                            <th>Start Time</th>
-                            <th>End time</th>
-                            <th>Distance travelled</th>
-                            <th>Violated geofences</th>
-                            <th>Fuel consumed</th>
-                            <th>Fuel efficiency</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let data of basicTable.data ">
-                            <td [nzChecked]="checked "></td>
-                            <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
-                            <td>{{ data.realtime }}</td>
-                            <td>{{ data.start }}</td>
-                            <td>{{ data.end }}</td>
-                            <td>{{ data.distance }}</td>
-                            <td>{{ data.Violated }}</td>
-                            <td>{{ data.consumed }}</td>
-                            <td>{{ data.efficiency }}</td>
-                        </tr>
-                    </tbody>
-                </nz-table>
+                <div class="table-responsive">
+                    <nz-table #basicTable [nzData]="listOfData " [nzFrontPagination]="false ">
+                        <thead>
+                            <tr>
+                                <th [nzChecked]="checked "></th>
+                                <th>Vehicle ID</th>
+                                <th>Real-time location</th>
+                                <th>Start Time</th>
+                                <th>End time</th>
+                                <th>Distance travelled</th>
+                                <th>Violated geofences</th>
+                                <th>Fuel consumed</th>
+                                <th>Fuel efficiency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of basicTable.data ">
+                                <td [nzChecked]="checked "></td>
+                                <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
+                                <td>{{ data.realtime }}</td>
+                                <td>{{ data.start }}</td>
+                                <td>{{ data.end }}</td>
+                                <td>{{ data.distance }}</td>
+                                <td>{{ data.Violated }}</td>
+                                <td>{{ data.consumed }}</td>
+                                <td>{{ data.efficiency }}</td>
+                            </tr>
+                        </tbody>
+                    </nz-table>
+                </div>
             </div>
         </div>
     </div>
@@ -78,7 +79,6 @@
 
 <!-- Button Add New Vehicles -->
 <nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="true" [nzWidth]="630" [nzVisible]="visible" nzTitle="New Vehicle" [nzFooter]="footerTpl" (nzOnClose)="close()">
-
     <form nz-form *nzDrawerContent>
         <nz-tabset nzType="card">
             <!-- MAIN -->

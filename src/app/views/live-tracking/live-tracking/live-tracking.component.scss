@@ -347,3 +347,19 @@ table tr th.ant-table-selection-column {
     line-height: 16px;
     word-wrap: break-word;
 }
+
+::ng-deep .mat-select-panel::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar:vertical {
+    width: 11px;
+    background-color: rgb(233, 245, 233)
+}
+
+::ng-deep .mat-select-panel::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid rgb(233, 245, 233) !important;
+    /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}

@@ -1,7 +1,27 @@
 import { Routes } from "@angular/router";
 import { AdminLayoutComponent } from "./shared/components/layouts/admin-layout/admin-layout.component";
+import { AuthLayoutComponent } from "./shared/components/layouts/auth-layout/auth-layout.component";
 
 export const rootRouterConfig: Routes = [
+  {
+    path: "",
+    redirectTo: "overview",
+    pathMatch: "full",
+  },
+  {
+    path: "",
+    // component: AuthLayoutComponent,
+    children: [
+      {
+        path: "sessions",
+        loadChildren: () =>
+          import("./views/sessions/sessions.module").then(
+            (m) => m.SessionsModule
+          ),
+        data: { title: "Session" },
+      },
+    ],
+  },
   {
     path: "",
     component: AdminLayoutComponent,
