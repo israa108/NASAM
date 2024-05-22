@@ -5,7 +5,7 @@ import { AuthLayoutComponent } from "./shared/components/layouts/auth-layout/aut
 export const rootRouterConfig: Routes = [
   {
     path: "",
-    redirectTo: "overview",
+    redirectTo: "overview/overview",
     pathMatch: "full",
   },
   {
