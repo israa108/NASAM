@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NzUploadFile } from "ng-zorro-antd/upload";
 import { Observable, Observer } from "rxjs";
+import * as FileSaver from "file-saver";
 
 interface Person {
   key: string;
@@ -23,6 +24,43 @@ export class DevicesSettingsComponent implements OnInit {
   passwordVisible = false;
   password?: string;
   checked = true;
+  exportColumns: any[];
+  persons: Person[];
+
+  //   exportPdf() {
+  //     import("jspdf").then(jsPDF => {
+  //         import("jspdf-autotable").then(x => {
+  //             const doc = new jsPDF.default(0,0);
+  //             doc.autoTable(this.exportColumns, this.persons);
+  //             doc.save('persons.pdf');
+  //         })
+  //     })
+  // }
+
+  exportExcel() {
+    import("xlsx").then((xlsx) => {
+      const worksheet = xlsx.utils.json_to_sheet(this.persons);
+      const workbook = { Sheets: { data: worksheet }, SheetNames: ["data"] };
+      const excelBuffer: any = xlsx.write(workbook, {
+        bookType: "xlsx",
+        type: "array",
+      });
+      this.saveAsExcelFile(excelBuffer, "persons");
+    });
+  }
+
+  saveAsExcelFile(buffer: any, fileName: string): void {
+    let EXCEL_TYPE =
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
+    let EXCEL_EXTENSION = ".xlsx";
+    const data: Blob = new Blob([buffer], {
+      type: EXCEL_TYPE,
+    });
+    FileSaver.saveAs(
+      data,
+      fileName + "_export_" + new Date().getTime() + EXCEL_EXTENSION
+    );
+  }
 
   listOfData: Person[] = [
     {

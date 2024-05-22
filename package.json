@@ -31,6 +31,7 @@
         "angular-tabler-icons": "^2.46.0",
         "bootstrap": "^5.3.2",
         "chart.js": "^4.4.1",
+        "file-saver": "^2.0.5",
         "flag-icons": "^6.6.6",
         "jquery": "^3.7.1",
         "ng-zorro-antd": "^14.2.1",
@@ -44,6 +45,7 @@
         "screenfull": "^6.0.2",
         "tinycolor2": "^1.4.2",
         "tslib": "^2.3.0",
+        "xlsx": "^0.18.5",
         "zone.js": "~0.11.4"
     },
     "devDependencies": {

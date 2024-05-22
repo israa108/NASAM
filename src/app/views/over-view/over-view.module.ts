@@ -14,6 +14,7 @@ import { ChartModule } from "primeng/chart";
 import { MapsModule } from "@syncfusion/ej2-angular-maps";
 import { NzDropDownModule } from "ng-zorro-antd/dropdown";
 import { MatButtonModule } from "@angular/material/button";
+import { NzButtonModule } from "ng-zorro-antd/button";
 
 @NgModule({
   declarations: [OverViewComponent],
@@ -32,6 +33,7 @@ import { MatButtonModule } from "@angular/material/button";
     ChartModule,
     MapsModule,
     NzDropDownModule,
+    NzButtonModule,
   ],
 })
 export class OverViewModule {}

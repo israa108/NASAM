@@ -449,10 +449,16 @@
                                     <button nz-button nzType="default ">
                             <i class="pi pi-ellipsis-v " style="font-size: 13px; "></i>
                         </button>
-                                    <button nz-button nzType="default ">
+                                    <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzType="default ">
                             <i class="pi pi-download " style="font-size: 13px; padding-right: 8px; "></i>
                             Export
                         </button>
+                                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                                        <ul nz-menu nzSelectable>
+                                            <li nz-menu-item (click)="exportExcel()">CSV</li>
+                                            <li nz-menu-item>PDF</li>
+                                        </ul>
+                                    </nz-dropdown-menu>
                                 </div>
                             </div>
 

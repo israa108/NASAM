@@ -17,6 +17,7 @@ import { NzTagModule } from "ng-zorro-antd/tag";
 import { NzBreadCrumbModule } from "ng-zorro-antd/breadcrumb";
 import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { TagModule } from "primeng/tag";
+import { NzDropDownModule } from "ng-zorro-antd/dropdown";
 
 @NgModule({
   declarations: [DevicesSettingsComponent],
@@ -37,6 +38,7 @@ import { TagModule } from "primeng/tag";
     NzBreadCrumbModule,
     NzCheckboxModule,
     TagModule,
+    NzDropDownModule,
   ],
 })
 export class DevicesSettingsModule {}
