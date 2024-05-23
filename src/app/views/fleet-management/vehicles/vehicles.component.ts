@@ -24,6 +24,7 @@ export class VehiclesComponent implements OnInit {
   date = null;
   isEnglish = false;
   visible = false;
+  value: Date;
 
   onChange(result: Date): void {
     console.log("onChange: ", result);
