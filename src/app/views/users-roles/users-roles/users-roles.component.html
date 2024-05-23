@@ -1,30 +1,292 @@
-<p>users-roles works!</p>
-<nz-table #expandTable [nzData]="listOfMapData" nzTableLayout="fixed" [nzFrontPagination]="false">
-    <thead>
-        <tr>
-            <th [nzChecked]="checked"></th>
-            <th>Object Name</th>
-            <th>Speed</th>
-            <th>Last Update</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ng-container *ngFor="let data of expandTable.data">
-            <ng-container *ngFor="let item of mapOfExpandedData[data.key]">
-                <tr *ngIf="(item.parent && item.parent.expand) || !item.parent">
-                    <td [nzChecked]="checked"></td>
+<!-- Header -->
+<div class="row g-3 title-top bg-white">
+    <div class="col">
+        <h5 style="margin-bottom: unset">Users & Roles</h5>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <div class="ButtonSet">
+            <button nz-button nzType="default"><i class="pi pi-print" style="font-size: 13px; padding-right: 8px; "></i>
+                Print</button>
+            <button nz-button nzType="default"><i class="pi pi-save" style="font-size: 13px; padding-right: 8px; "></i>
+                Save</button>
+            <button nz-button nzType="primary" (click)="open()">Add New User</button>
+        </div>
+    </div>
 
-                    <td [nzIndentSize]="item.level! * 20" [nzShowExpand]="!!item.children" [(nzExpand)]="item.expand" (nzExpandChange)="collapse(mapOfExpandedData[data.key], item, $event)">
-                        {{ item.name }}
-                    </td>
-                    <td>{{ item.speed }}</td>
-                    <td>{{ item.lastUpdate }}</td>
-                    <td>
-                        <nz-badge nzColor="green"></nz-badge>
-                    </td>
-                </tr>
-            </ng-container>
-        </ng-container>
-    </tbody>
-</nz-table>
+
+</div>
+
+<!-- Header -->
+<div class="title-top bg-white">
+    <nz-tabset>
+
+        <!-- Users -->
+        <nz-tab nzTitle="Users">
+            <div class="container-fluid p-2">
+                <div class="row gy-3">
+                    <div class="col-12">
+                        <div class="bg-white m-0 rounded">
+                            <div class="Toolbar">
+                                <nz-input-group [nzSuffix]=" suffixIconSearch " style="width: 200px;">
+                                    <input type="text" nz-input placeholder="Search..." />
+                                </nz-input-group>
+                                <ng-template #suffixIconSearch>
+                                    <span nz-icon nzType="search"></span>
+                                </ng-template>
+
+                                <div class="Right">
+                                    <button nz-button nzType="default ">
+                            Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
+                        </button>
+                                    <button nz-button nzType="default">
+                <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
+            </button>
+                                </div>
+                            </div>
+
+                            <!-- Table -->
+                            <div class="table-responsive">
+                                <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+                                    <thead>
+                                        <tr>
+                                            <th [nzChecked]="checked"></th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>User Name</th>
+                                            <th>Start Date</th>
+                                            <th>Expire Date</th>
+                                            <th>Email</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of basicTable.data">
+                                            <td [nzChecked]="checked "></td>
+                                            <td style="color: #1D4ED8;">{{ data.firstname }}</td>
+                                            <td>{{ data.lastname }}</td>
+                                            <td>{{ data.username }}</td>
+                                            <td>{{ data.startdate }}</td>
+                                            <td>{{ data.expiredate }}</td>
+                                            <td>{{ data.email }}</td>
+                                            <td>{{ data.actions }}</td>
+                                        </tr>
+                                    </tbody>
+                                </nz-table>
+
+                                <!-- <p-table [value]="listOfData">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th [nzChecked]="checked "></th>
+                                <th>Vehicle ID</th>
+                                <th>Real-time location</th>
+                                <th>Start Time</th>
+                                <th>End time</th>
+                                <th>Distance travelled</th>
+                                <th>Violated geofences</th>
+                                <th>Fuel consumed</th>
+                                <th>Fuel efficiency</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-data>
+                            <tr>
+                                <td [nzChecked]="checked "></td>
+                                <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
+                                <td>{{ data.realtime }}</td>
+                                <td>{{ data.start }}</td>
+                                <td>{{ data.end }}</td>
+                                <td>{{ data.distance }}</td>
+                                <td>{{ data.Violated }}</td>
+                                <td>{{ data.consumed }}</td>
+                                <td>{{ data.efficiency }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-tab>
+
+        <!-- Roles -->
+        <nz-tab nzTitle="Roles">
+            <div class="container-fluid p-2">
+                <div class="row gy-3">
+                    <div class="col-12">
+                        <div class="bg-white m-0 rounded">
+                            <div class="Toolbar">
+                                <nz-input-group [nzSuffix]=" suffixIconSearch" style="width: 200px;">
+                                    <input type="text" nz-input placeholder="Search..." />
+                                </nz-input-group>
+                                <ng-template #suffixIconSearch>
+                                    <span nz-icon nzType="search"></span>
+                                </ng-template>
+
+                                <div class="Right">
+                                    <button nz-button nzType="default">
+                            Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
+                        </button>
+                                    <button nz-button nzType="default">
+                <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
+            </button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+                                    <thead>
+                                        <tr>
+                                            <th [nzChecked]="checked"></th>
+                                            <th>Role Name</th>
+                                            <th>Abbreviation</th>
+                                            <th>Role permission 01</th>
+                                            <th>Role permission 02</th>
+                                            <th>Role permission 03</th>
+                                            <th>Assigned users</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let data of basicTable.data">
+                                            <td [nzChecked]="checked "></td>
+                                            <td style="color: #1D4ED8;">{{ data.rolename }}</td>
+                                            <td>{{ data.abbreviation }}</td>
+                                            <td>{{ data.start }}</td>
+                                            <td>{{ data.role1 }}</td>
+                                            <td>{{ data.role2 }}</td>
+                                            <td>{{ data.role3 }}</td>
+                                            <td>{{ data.assignedusers }}</td>
+                                            <td>{{ data.description }}</td>
+                                        </tr>
+                                    </tbody>
+                                </nz-table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-tab>
+    </nz-tabset>
+</div>
+
+
+
+<!-- Button Add New Vehicles -->
+<nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="true" [nzWidth]="630" [nzVisible]="visible" nzTitle="New Driver" [nzFooter]=" footerTpl " (nzOnClose)="close() ">
+
+    <form nz-form *nzDrawerContent>
+        <div class="new ">
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel ">User Name</div>
+                    <input nz-input placeholder="User Name" type="text " />
+                </div>
+
+                <div class="Input">
+                    <div class="FieldLabel">Password</div>
+                    <nz-input-group [nzSuffix]="suffixTemplate">
+                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="input password" />
+                    </nz-input-group>
+                    <ng-template #suffixTemplate>
+                        <span nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></span>
+                    </ng-template>
+                </div>
+            </div>
+
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel">Client Name</div>
+                    <nz-select [ngModel]="'Model' " style="width: 100%;">
+                        <nz-option [nzLabel]="'Model'" [nzValue]=" 'Model'"></nz-option>
+                        <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                    </nz-select>
+                </div>
+
+                <div class="Input ">
+                    <div class="FieldLabel ">Client Number</div>
+                    <input nz-input placeholder="01231251511515 " type="text " />
+                </div>
+            </div>
+
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel">Email</div>
+                    <nz-select [ngModel]="'Model' " style="width: 100%;">
+                        <nz-option [nzLabel]="'Model'" [nzValue]=" 'Model'"></nz-option>
+                        <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                    </nz-select>
+                </div>
+
+                <div class="Input ">
+                    <div class="FieldLabel ">Device Limit</div>
+                    <input nz-input placeholder="Device Limit" type="text " />
+                </div>
+            </div>
+
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel">Role</div>
+                    <nz-select [ngModel]="'Model' " style="width: 100%;">
+                        <nz-option [nzLabel]="'Model'" [nzValue]=" 'Model'"></nz-option>
+                        <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                    </nz-select>
+                </div>
+                <div class="Input ">
+                    <div class="FieldLabel">Parent</div>
+                    <nz-select [ngModel]="'Model' " style="width: 100%;">
+                        <nz-option [nzLabel]="'Model'" [nzValue]=" 'Model'"></nz-option>
+                        <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel ">Start Date</div>
+                    <nz-select [ngModel]=" 'Model' " style="width: 100%; ">
+                        <nz-option [nzLabel]=" 'Model' " [nzValue]=" 'Model' "></nz-option>
+                    </nz-select>
+                </div>
+                <div class="Input ">
+                    <div class="FieldLabel ">Expiry Date</div>
+                    <nz-select [ngModel]=" 'Demo' " style="width: 100%; ">
+                        <nz-option [nzLabel]=" 'Demo' " [nzValue]=" 'Demo' "></nz-option>
+                    </nz-select>
+                </div>
+            </div>
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel ">Time Zone</div>
+                    <input nz-input placeholder="Time Zone" type="text " />
+                </div>
+
+                <div class="Input ">
+                    <div class="FieldLabel ">Invoice amount</div>
+                    <input nz-input placeholder="Invoice amount" type="text " />
+                </div>
+            </div>
+
+            <div class="MultiInput ">
+                <div class="Input ">
+                    <div class="FieldLabel ">Allow add client</div>
+                    <nz-select [ngModel]=" 'Model' " style="width: 100%; ">
+                        <nz-option [nzLabel]=" 'Model' " [nzValue]=" 'Model' "></nz-option>
+                    </nz-select>
+                </div>
+                <div class="Input ">
+                    <div class="FieldLabel ">Client Limit</div>
+                    <input nz-input placeholder="Device Limit" type="text " />
+                </div>
+            </div>
+
+
+        </div>
+
+    </form>
+
+    <ng-template #footerTpl>
+        <div style="float: right">
+            <button nz-button style="margin-right: 8px;" (click)="close() ">Cancel</button>
+            <button nz-button nzType="primary" (click)="close() ">Add New User</button>
+        </div>
+    </ng-template>
+</nz-drawer>

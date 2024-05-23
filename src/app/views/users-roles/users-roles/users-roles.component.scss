@@ -1,0 +1,223 @@
+.ButtonSet {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+}
+
+::ng-deep .ant-btn-primary {
+    color: #fff;
+    border-color: #A424B4;
+    background: #A424B4;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+}
+
+::ng-deep .ant-btn-primary:focus,
+.ant-btn-primary:hover {
+    color: #fff;
+    border-color: #A424B4;
+    background: #A424B4;
+}
+
+::ng-deep .ant-btn {
+    border-radius: 8px;
+}
+
+::ng-deep .ant-input-affix-wrapper {
+    position: relative;
+    min-width: 0;
+    color: rgba(0, 0, 0, .85);
+    line-height: 1.5715;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    transition: all .3s;
+    display: inline-flex;
+}
+
+::ng-deep .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 1.6em;
+    background-color: rgba(0, 0, 0, .06);
+    transform: translateY(-50%);
+    transition: background-color .3s;
+    content: '';
+}
+
+::ng-deep .ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-wrap {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex: auto;
+    align-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translate(0);
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #A424B4;
+    text-shadow: 0 0 .25px currentcolor;
+}
+
+::ng-deep .ant-tabs-tab:hover {
+    color: #A424B4;
+}
+
+::ng-deep .ant-tabs-tab.ant-tabs-tab-active {
+    border-bottom: 3px solid #A424B4 !important;
+}
+
+.Toolbar {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-flex;
+    .Right {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        display: flex;
+    }
+}
+
+:host ::ng-deep .p-sidebar-sm {
+    .p-sidebar-sm {
+        z-index: 0;
+    }
+}
+
+:host ::ng-deep.p-sidebar-right {
+    top: 0;
+    right: 0;
+    width: 30rem;
+    height: 100%;
+}
+
+::ng-deep .ant-table-thead>tr>th {
+    position: relative;
+    font-weight: 500;
+    text-align: left;
+    transition: background .3s ease;
+    background-color: #EBECF0;
+}
+
+.MultiInput {
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    display: inline-flex;
+    width: 100%;
+}
+
+.Input {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    display: inline-flex;
+}
+
+.FieldLabel {
+    color: #42526E;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    word-wrap: break-word;
+}
+
+::ng-deep .ant-input:placeholder-shown {
+    text-overflow: ellipsis;
+    border-radius: 8px;
+}
+
+::ng-deep .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+::ng-deep .ant-drawer-close {
+    display: inline-block;
+    margin-right: 12px;
+    color: rgba(0, 0, 0, .45);
+    font-weight: 700;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color .3s;
+    text-rendering: auto;
+    position: absolute;
+    right: 10px;
+}
+
+::ng-deep .ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-wrap {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex: auto;
+    align-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translate(0);
+    background-color: #DFE1E6;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+::ng-deep .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-card>div>.ant-tabs-nav .ant-tabs-tab {
+    margin: 0;
+    padding: 8px 38px;
+    // background: none;
+    border: 1px solid #f0f0f0;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+::ng-deep .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab-active,
+.ant-tabs-card>div>.ant-tabs-nav .ant-tabs-tab-active {
+    color: #A424B4;
+    background: #fff;
+}
+
+::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #A424B4;
+    text-shadow: 0 0 .25px currentcolor;
+}
+
+::ng-deep .ant-tabs-card.ant-tabs-top>.ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-card.ant-tabs-top>div>.ant-tabs-nav .ant-tabs-tab {
+    border-radius: 8px;
+}
+
+.new {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+    display: inline-flex;
+    width: 100%;
+    margin-bottom: 25px;
+}

@@ -1,14 +1,26 @@
 import { Component, OnInit } from "@angular/core";
+import { Data } from "@angular/router";
+import { getISOWeek } from "date-fns";
 
-export interface TreeNodeInterface {
+interface Person {
   key: string;
-  name: string;
-  speed?: string;
-  level?: number;
-  expand?: boolean;
-  lastUpdate?: string;
-  children?: TreeNodeInterface[];
-  parent?: TreeNodeInterface;
+  firstname: string;
+  lastname: string;
+  username: string;
+  startdate: string;
+  expiredate: string;
+  email: string;
+  actions: string;
+}
+interface Date {
+  key: string;
+  firstname: string;
+  lastname: string;
+  username: string;
+  startdate: string;
+  expiredate: string;
+  email: string;
+  actions: string;
 }
 @Component({
   selector: "app-users-roles",
@@ -16,93 +28,57 @@ export interface TreeNodeInterface {
   styleUrls: ["./users-roles.component.scss"],
 })
 export class UsersRolesComponent implements OnInit {
+  visibleSidebar2;
   checked: boolean = false;
+  date = null;
+  isEnglish = false;
+  visible = false;
 
+  onChange(result: Date): void {
+    console.log("onChange: ", result);
+  }
+
+  // getWeek(result: Date): void {
+  //   console.log("week: ", getISOWeek(result));
+  // }
+
+  // changeLanguage(): void {
+  //   this.i18n.setLocale(this.isEnglish ? zh_CN : en_US);
+  //   this.isEnglish = !this.isEnglish;
+  // }
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
+  }
   constructor() {}
-  listOfMapData: TreeNodeInterface[] = [
+
+  ngOnInit(): void {}
+
+  listOfData: Person[] = [
     {
-      key: `1`,
-      name: "Ansary’s Objects",
-      children: [
-        {
-          key: `1-1`,
-          name: "Car name 01",
-          speed: "10 km/h",
-          lastUpdate: "20/11/2023",
-        },
-      ],
-    },
-    {
-      key: `1`,
-      name: "Ansary’s Objects",
-      children: [
-        {
-          key: `1-1`,
-          name: "Car name 01",
-          speed: "10 km/h",
-          lastUpdate: "New York No. 2 Lake Park",
-        },
-      ],
+      key: "1",
+      firstname: "Ahmed",
+      lastname: "Hossam",
+      username: "AhmedHossam1",
+      startdate: "10.10.2024",
+      expiredate: "10.10.2024",
+      email: "AhmedHossam1@gmail.com",
+      actions: "200 L",
     },
   ];
-  mapOfExpandedData: { [key: string]: TreeNodeInterface[] } = {};
-
-  collapse(
-    array: TreeNodeInterface[],
-    data: TreeNodeInterface,
-    $event: boolean
-  ): void {
-    if (!$event) {
-      if (data.children) {
-        data.children.forEach((d) => {
-          const target = array.find((a) => a.key === d.key)!;
-          target.expand = false;
-          this.collapse(array, target, false);
-        });
-      } else {
-        return;
-      }
-    }
-  }
-
-  convertTreeToList(root: TreeNodeInterface): TreeNodeInterface[] {
-    const stack: TreeNodeInterface[] = [];
-    const array: TreeNodeInterface[] = [];
-    const hashMap = {};
-    stack.push({ ...root, level: 0, expand: false });
-
-    while (stack.length !== 0) {
-      const node = stack.pop()!;
-      this.visitNode(node, hashMap, array);
-      if (node.children) {
-        for (let i = node.children.length - 1; i >= 0; i--) {
-          stack.push({
-            ...node.children[i],
-            level: node.level! + 1,
-            expand: false,
-            parent: node,
-          });
-        }
-      }
-    }
-
-    return array;
-  }
-
-  visitNode(
-    node: TreeNodeInterface,
-    hashMap: { [key: string]: boolean },
-    array: TreeNodeInterface[]
-  ): void {
-    if (!hashMap[node.key]) {
-      hashMap[node.key] = true;
-      array.push(node);
-    }
-  }
-
-  ngOnInit(): void {
-    this.listOfMapData.forEach((item) => {
-      this.mapOfExpandedData[item.key] = this.convertTreeToList(item);
-    });
-  }
+  // listOfData2: Data[] = [
+  //   {
+  //     key: "1",
+  //     firstname: "Ahmed",
+  //     lastname: "Hossam",
+  //     username: "AhmedHossam1",
+  //     startdate: "10.10.2024",
+  //     expiredate: "10.10.2024",
+  //     email: "AhmedHossam1@gmail.com",
+  //     actions: "200 L",
+  //   },
+  // ];
 }

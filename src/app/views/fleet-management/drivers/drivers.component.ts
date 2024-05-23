@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-interface Person {
+
+export interface Person {
   key: string;
   driver: number;
   name: string;

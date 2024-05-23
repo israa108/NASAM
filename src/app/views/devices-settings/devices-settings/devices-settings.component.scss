@@ -118,3 +118,18 @@
     transition: background-color .3s;
     content: '';
 }
+
+::ng-deep .ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap,
+.ant-tabs>div>.ant-tabs-nav .ant-tabs-nav-wrap {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex: auto;
+    align-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translate(0);
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+}
