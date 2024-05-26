@@ -54,10 +54,10 @@ const ELEMENT_DATA: productsData[] = [
   styleUrls: ["./over-view.component.scss"],
 })
 export class OverViewComponent implements OnInit {
-  date2: Date | undefined;
   data: any;
   data2: any;
   date = null;
+  date1: Date;
 
   options: any;
   displayedColumns: string[] = ["assigned", "name", "priority", "budget"];

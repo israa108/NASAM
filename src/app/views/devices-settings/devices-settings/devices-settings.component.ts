@@ -3,6 +3,7 @@ import { NzUploadFile } from "ng-zorro-antd/upload";
 import { Observable, Observer } from "rxjs";
 import * as FileSaver from "file-saver";
 
+// Data Table
 interface Person {
   key: string;
   billing: string;
@@ -26,16 +27,6 @@ export class DevicesSettingsComponent implements OnInit {
   checked = true;
   exportColumns: any[];
   persons: Person[];
-
-  //   exportPdf() {
-  //     import("jspdf").then(jsPDF => {
-  //         import("jspdf-autotable").then(x => {
-  //             const doc = new jsPDF.default(0,0);
-  //             doc.autoTable(this.exportColumns, this.persons);
-  //             doc.save('persons.pdf');
-  //         })
-  //     })
-  // }
 
   exportExcel() {
     import("xlsx").then((xlsx) => {
@@ -62,6 +53,7 @@ export class DevicesSettingsComponent implements OnInit {
     );
   }
 
+  // Data Table
   listOfData: Person[] = [
     {
       key: "1",

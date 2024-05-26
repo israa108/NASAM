@@ -1,3 +1,4 @@
+<!-- Header -->
 <div class="row g-3 title-top border-b bg-white">
     <div class="col">
         <h6 style="margin-bottom: unset">Drivers</h6>
@@ -18,6 +19,7 @@
 
 </div>
 
+<!-- Header Button -->
 <div class="title-top border-b bg-white">
     <div class="Toolbar">
         <nz-input-group [nzSuffix]=" suffixIconSearch " style="width: 200px;">
@@ -41,7 +43,7 @@
 
 <div class="container-fluid p-2">
     <div class=" row gy-3">
-        <!-- Chart-1 -->
+        <!-- Table -->
         <div class="col-12">
             <div class="bg-white p-3 m-0 rounded">
                 <div class="table-responsive">
@@ -108,67 +110,76 @@
     </div>
 </div>
 
-
+<!-- Sidebar Button -->
 <nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="true" [nzWidth]="630" [nzVisible]="visible" nzTitle="New Driver" [nzFooter]=" footerTpl " (nzOnClose)="close() ">
-
     <form nz-form *nzDrawerContent>
-        <div class="new ">
-            <div class="MultiInput ">
-                <div class="Input ">
-                    <div class="FieldLabel ">Name</div>
-                    <input nz-input placeholder="Name " type="text " />
+        <div class="new">
+            <div class="MultiInput">
+                <!-- Name -->
+                <div class="Input">
+                    <div class="FieldLabel">Name</div>
+                    <input nz-input placeholder="Name" type="text" />
                 </div>
 
-                <div class="Input ">
-                    <div class="FieldLabel ">License plate</div>
-                    <input nz-input placeholder="512 S G J " type="text " />
-                </div>
-            </div>
-
-            <div class="MultiInput ">
-                <div class="Input ">
-                    <div class="FieldLabel ">Phone number 1</div>
-                    <input nz-input placeholder="01231251511515 " type="text " />
-                </div>
-
-                <div class="Input ">
-                    <div class="FieldLabel ">Phone number 2</div>
-                    <input nz-input placeholder="01231251511515 " type="text " />
+                <!-- License plate -->
+                <div class="Input">
+                    <div class="FieldLabel">License plate</div>
+                    <input nz-input placeholder="512 S G J" type="text" />
                 </div>
             </div>
 
-            <div class="MultiInput ">
-                <div class="Input ">
-                    <div class="FieldLabel ">Address 1</div>
-                    <input nz-input placeholder="Demo " type="text " />
+            <div class="MultiInput">
+                <!-- Phone number 1 -->
+                <div class="Input">
+                    <div class="FieldLabel">Phone number 1</div>
+                    <input nz-input placeholder="01231251511515" type="text" />
                 </div>
 
-                <div class="Input ">
-                    <div class="FieldLabel ">Address 2</div>
-                    <input nz-input placeholder="Subtype " type="text " />
+                <!-- Phone number 2 -->
+                <div class="Input">
+                    <div class="FieldLabel">Phone number 2</div>
+                    <input nz-input placeholder="01231251511515" type="text" />
                 </div>
             </div>
 
-            <div class="MultiInput ">
-                <div class="Input ">
-                    <div class="FieldLabel ">License expiry date</div>
-                    <nz-select [ngModel]=" 'Model' " style="width: 100%; ">
-                        <nz-option [nzLabel]=" 'Model' " [nzValue]=" 'Model' "></nz-option>
+            <div class="MultiInput">
+                <!-- Address 1 -->
+                <div class="Input">
+                    <div class="FieldLabel">Address 1</div>
+                    <input nz-input placeholder="Demo" type="text" />
+                </div>
+
+                <!-- Address 2 -->
+                <div class="Input">
+                    <div class="FieldLabel">Address 2</div>
+                    <input nz-input placeholder="Subtype" type="text" />
+                </div>
+            </div>
+
+            <div class="MultiInput">
+                <!-- License expiry date -->
+                <div class="Input">
+                    <div class="FieldLabel">License expiry date</div>
+                    <nz-select [ngModel]="'Model'" style="width: 100%;">
+                        <nz-option [nzLabel]="'Model'" [nzValue]="'Model'"></nz-option>
                     </nz-select>
                 </div>
-                <div class="Input ">
+
+                <!-- Parent -->
+                <div class="Input">
                     <div class="FieldLabel ">Parent</div>
-                    <nz-select [ngModel]=" 'Demo' " style="width: 100%; ">
-                        <nz-option [nzLabel]=" 'Demo' " [nzValue]=" 'Demo' "></nz-option>
+                    <nz-select [ngModel]="'Demo'" style="width: 100%;">
+                        <nz-option [nzLabel]="'Demo'" [nzValue]="'Demo'"></nz-option>
                     </nz-select>
                 </div>
             </div>
 
-            <div class="MultiInput ">
-                <div class="Input ">
-                    <div class="FieldLabel ">Notes</div>
-                    <nz-select [ngModel]=" 'Additional info' " style="width: 100%; ">
-                        <nz-option [nzLabel]=" 'Additional info' " [nzValue]=" 'Additional info' "></nz-option>
+            <div class="MultiInput">
+                <!-- Notes -->
+                <div class="Input">
+                    <div class="FieldLabel">Notes</div>
+                    <nz-select [ngModel]="'Additional info'" style="width: 100%;">
+                        <nz-option [nzLabel]="'Additional info'" [nzValue]="'Additional info'"></nz-option>
                     </nz-select>
                 </div>
             </div>
@@ -176,6 +187,7 @@
 
     </form>
 
+    <!-- Buttons -->
     <ng-template #footerTpl>
         <div style="float: right">
             <button nz-button style="margin-right: 8px;" (click)="close() ">Cancel</button>

@@ -3,16 +3,19 @@
     <div class="col">
         <h6 style="margin-bottom: unset">Vehicles</h6>
     </div>
+    <!-- Header Buttons -->
     <div class="col d-flex justify-content-end">
         <div class="ButtonSet">
-            <button nz-button nzType="default">
-                <div style="text-align: center; color: #42526E; font-size: 14px; font-weight: 500; line-height: 20px; word-wrap: break-word">
-                    <i class="pi pi-calendar-minus" style="font-size: 13px; padding-right: 8px; "></i>10 Sep 2023- 11 Oct 2023</div>
+            <!-- calender -->
+            <p-calendar inputId="basic" [(ngModel)]="date1">
+            </p-calendar>
+
+            <button nz-button nzType="default"><i class="pi pi-print" style="font-size: 13px; padding-right: 8px;"></i>
+                Print
             </button>
-            <button nz-button nzType="default"><i class="pi pi-print" style="font-size: 13px; padding-right: 8px; "></i>
-                Print</button>
-            <button nz-button nzType="default"><i class="pi pi-save" style="font-size: 13px; padding-right: 8px; "></i>
-                Save</button>
+            <button nz-button nzType="default"><i class="pi pi-save" style="font-size: 13px; padding-right: 8px;"></i>
+                Save
+            </button>
             <button nz-button nzType="primary" (click)="open()">Add new vehicle</button>
         </div>
     </div>
@@ -41,8 +44,8 @@
 
 <!-- Driver Table -->
 <div class="container-fluid p-2">
-    <div class=" row gy-3">
-        <!-- Chart-1 -->
+    <div class="row gy-3">
+        <!-- Table -->
         <div class="col-12">
             <div class="bg-white p-3 m-0 rounded">
                 <div class="table-responsive">
@@ -222,11 +225,13 @@
                     </div>
 
                     <div class="MultiInput">
+                        <!-- Cargo capacity -->
                         <div class="Input">
                             <div class="FieldLabel">Cargo capacity</div>
                             <input nz-input placeholder="VIN" type="text" />
                         </div>
 
+                        <!-- Passengers capacity -->
                         <div class="Input">
                             <div class="FieldLabel">Passengers capacity</div>
                             <input nz-input placeholder="Color" type="text" />
@@ -342,22 +347,22 @@
 
                         <!-- Fuel grade -->
                         <div class="Input">
-                            <div class="FieldLabel">Fuel grade</div>
+                            <div class="FieldLabel">Expiry date</div>
                             <input nz-input placeholder="612335" type="text" />
                         </div>
                     </div>
 
                     <!-- Insurance 2 policy number -->
-                    <div class="MultiInput ">
-                        <div class="Input ">
-                            <div class="FieldLabel ">Insurance 2 policy number</div>
-                            <input nz-input placeholder="5125124 " type="text " />
+                    <div class="MultiInput">
+                        <div class="Input">
+                            <div class="FieldLabel">Insurance 2 policy number</div>
+                            <input nz-input placeholder="5125124" type="text" />
                         </div>
 
                         <!-- Fuel grade -->
-                        <div class="Input ">
-                            <div class="FieldLabel ">Fuel grade</div>
-                            <input nz-input placeholder="License plate " type="text " />
+                        <div class="Input">
+                            <div class="FieldLabel ">Expiry date</div>
+                            <input nz-input placeholder="License plate" type="text" />
                         </div>
                     </div>
                 </div>
@@ -365,8 +370,9 @@
         </nz-tabset>
     </form>
 
+    <!-- Buttons -->
     <ng-template #footerTpl>
-        <div style="float: right ">
+        <div style="float: right">
             <button nz-button style="margin-right: 8px;" (click)="close() ">Cancel</button>
             <button nz-button nzType="primary" (click)="close() ">Save</button>
         </div>

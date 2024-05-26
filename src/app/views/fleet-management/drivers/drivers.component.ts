@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
+// Data Table
 export interface Person {
   key: string;
   driver: number;
@@ -32,6 +33,7 @@ export class DriversComponent implements OnInit {
     this.visible = false;
   }
 
+  // Data Table
   listOfData: Person[] = [
     {
       key: "1",

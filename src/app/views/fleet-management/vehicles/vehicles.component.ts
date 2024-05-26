@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { getISOWeek } from "date-fns";
 
-import { en_US, NzI18nService, zh_CN } from "ng-zorro-antd/i18n";
+// Data Table
 interface Person {
   key: string;
   vehicle: string;
@@ -25,6 +25,7 @@ export class VehiclesComponent implements OnInit {
   isEnglish = false;
   visible = false;
   value: Date;
+  date1: Date;
 
   onChange(result: Date): void {
     console.log("onChange: ", result);
@@ -34,10 +35,6 @@ export class VehiclesComponent implements OnInit {
     console.log("week: ", getISOWeek(result));
   }
 
-  // changeLanguage(): void {
-  //   this.i18n.setLocale(this.isEnglish ? zh_CN : en_US);
-  //   this.isEnglish = !this.isEnglish;
-  // }
   open(): void {
     this.visible = true;
   }
@@ -49,6 +46,7 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Data Table
   listOfData: Person[] = [
     {
       key: "1",
