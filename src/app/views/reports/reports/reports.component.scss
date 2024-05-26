@@ -223,6 +223,26 @@
         color: #A424B4;
     }
     
+     ::ng-deep .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 0;
+        height: 1.6em;
+        background-color: rgba(0, 0, 0, .06);
+        transform: translateY(-50%);
+        transition: background-color .3s;
+        content: '';
+    }
+    
+     ::ng-deep.ant-table-thead>tr>th {
+        position: relative;
+        font-weight: 500;
+        text-align: left;
+        transition: background 0.3s ease;
+        background-color: #EBECF0;
+    }
+    
     .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
         background-color: #f0d9f3;
         border-radius: 10px;

@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-// import { MatBadgeModule } from "@angular/material/badge";
 import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatCardModule } from "@angular/material/card";
@@ -11,7 +10,6 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatIconModule } from "@angular/material/icon";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
-// import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatSortModule } from "@angular/material/sort";
 import { MatStepperModule } from "@angular/material/stepper";
@@ -37,9 +35,20 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { InputTextModule } from "primeng/inputtext";
 import { FormsModule } from "@angular/forms";
-
 import { MatBadgeModule } from "@angular/material/badge";
-
+import { NzButtonModule } from "ng-zorro-antd/button";
+import { NzIconModule } from "ng-zorro-antd/icon";
+import { SidebarModule } from "primeng/sidebar";
+import { ButtonModule } from "primeng/button";
+import { TableModule } from "primeng/table";
+import { NzTableModule } from "ng-zorro-antd/table";
+import { NzInputModule } from "ng-zorro-antd/input";
+import { NzSegmentedModule } from "ng-zorro-antd/segmented";
+import { NzTabsModule } from "ng-zorro-antd/tabs";
+import { NzDrawerModule } from "ng-zorro-antd/drawer";
+import { NzSelectModule } from "ng-zorro-antd/select";
+import { NzDatePickerModule } from "ng-zorro-antd/date-picker";
+import { CalendarModule } from "primeng/calendar";
 // icons
 // import { TablerIconsModule } from "angular-tabler-icons";
 
@@ -68,7 +77,6 @@ import { MatBadgeModule } from "@angular/material/badge";
     MatButtonToggleModule,
     MatChipsModule,
     MatIconModule,
-    // MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
     MatTooltipModule,
@@ -81,11 +89,22 @@ import { MatBadgeModule } from "@angular/material/badge";
     MatTreeModule,
     MatRippleModule,
     MatBadgeModule,
-    // MatBadgeModule,
     MatBottomSheetModule,
     MatDividerModule,
-    // TablerIconsModule,
     InputTextModule,
+    NzButtonModule,
+    NzIconModule,
+    SidebarModule,
+    ButtonModule,
+    TableModule,
+    NzTableModule,
+    NzInputModule,
+    NzSegmentedModule,
+    NzTabsModule,
+    NzDrawerModule,
+    NzSelectModule,
+    NzDatePickerModule,
+    CalendarModule,
   ],
 })
 export class SharedMaterialModule {}
