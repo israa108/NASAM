@@ -24,7 +24,7 @@
 <!-- Header -->
 <div class="title-top border-b bg-white">
     <div class="Toolbar">
-        <nz-input-group [nzSuffix]=" suffixIconSearch " style="width: 200px;">
+        <nz-input-group [nzSuffix]="suffixIconSearch" style="width: 200px;">
             <input type="text" nz-input placeholder="Search..." />
         </nz-input-group>
         <ng-template #suffixIconSearch>
@@ -32,7 +32,7 @@
         </ng-template>
 
         <div class="Right">
-            <button nz-button nzType="default ">
+            <button nz-button nzType="default">
                 Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
             </button>
             <button nz-button nzType="default">
@@ -65,7 +65,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let data of basicTable.data">
-                                <td [nzChecked]="checked "></td>
+                                <td [nzChecked]="checked"></td>
                                 <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
                                 <td>{{ data.realtime }}</td>
                                 <td>{{ data.start }}</td>
@@ -361,7 +361,7 @@
 
                         <!-- Fuel grade -->
                         <div class="Input">
-                            <div class="FieldLabel ">Expiry date</div>
+                            <div class="FieldLabel">Expiry date</div>
                             <input nz-input placeholder="License plate" type="text" />
                         </div>
                     </div>
@@ -373,8 +373,8 @@
     <!-- Buttons -->
     <ng-template #footerTpl>
         <div style="float: right">
-            <button nz-button style="margin-right: 8px;" (click)="close() ">Cancel</button>
-            <button nz-button nzType="primary" (click)="close() ">Save</button>
+            <button nz-button style="margin-right: 8px;" (click)="close()">Cancel</button>
+            <button nz-button nzType="primary" (click)="close()">Save</button>
         </div>
     </ng-template>
 </nz-drawer>

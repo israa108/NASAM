@@ -43,3 +43,9 @@
     border-radius: 8px;
     background: #fff;
 }
+
+::ng-deep .p-calendar .p-inputtext {
+    flex: 1 1 auto;
+    width: 250px;
+    height: 30px;
+}
