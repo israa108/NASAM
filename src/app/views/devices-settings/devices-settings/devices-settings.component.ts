@@ -12,6 +12,7 @@ interface Person {
   status: string;
   subscription: string;
 }
+
 @Component({
   selector: "app-devices-settings",
   templateUrl: "./devices-settings.component.html",
