@@ -44,41 +44,38 @@
 
 <!-- Driver Table -->
 <div class="container-fluid p-2">
-    <div class="row gy-3">
-        <!-- Table -->
-        <div class="col-12">
-            <div class="bg-white p-3 m-0 rounded">
-                <div class="table-responsive">
-                    <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
-                        <thead>
-                            <tr>
-                                <th [nzChecked]="checked"></th>
-                                <th>Vehicle ID</th>
-                                <th>Real-time location</th>
-                                <th>Start Time</th>
-                                <th>End time</th>
-                                <th>Distance travelled</th>
-                                <th>Violated geofences</th>
-                                <th>Fuel consumed</th>
-                                <th>Fuel efficiency</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let data of basicTable.data">
-                                <td [nzChecked]="checked"></td>
-                                <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
-                                <td>{{ data.realtime }}</td>
-                                <td>{{ data.start }}</td>
-                                <td>{{ data.end }}</td>
-                                <td>{{ data.distance }}</td>
-                                <td>{{ data.Violated }}</td>
-                                <td>{{ data.consumed }}</td>
-                                <td>{{ data.efficiency }}</td>
-                            </tr>
-                        </tbody>
-                    </nz-table>
+    <!-- Table -->
+    <div class="bg-white p-3 m-0 rounded">
+        <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+            <thead>
+                <tr>
+                    <th [nzChecked]="checked"></th>
+                    <th>Vehicle ID</th>
+                    <th>Real-time location</th>
+                    <th>Start Time</th>
+                    <th>End time</th>
+                    <th>Distance travelled</th>
+                    <th>Violated geofences</th>
+                    <th>Fuel consumed</th>
+                    <th>Fuel efficiency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                    <td [nzChecked]="checked"></td>
+                    <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
+                    <td>{{ data.realtime }}</td>
+                    <td>{{ data.start }}</td>
+                    <td>{{ data.end }}</td>
+                    <td>{{ data.distance }}</td>
+                    <td>{{ data.Violated }}</td>
+                    <td>{{ data.consumed }}</td>
+                    <td>{{ data.efficiency }}</td>
+                </tr>
+            </tbody>
+        </nz-table>
 
-                    <!-- <p-table [value]="listOfData">
+        <!-- <p-table [value]="listOfData">
                         <ng-template pTemplate="header">
                             <tr>
                                 <th [nzChecked]="checked "></th>
@@ -106,9 +103,6 @@
                             </tr>
                         </ng-template>
                     </p-table> -->
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
