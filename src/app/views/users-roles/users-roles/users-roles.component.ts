@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Data } from "@angular/router";
 import { getISOWeek } from "date-fns";
 
 interface Person {
@@ -12,15 +11,12 @@ interface Person {
   email: string;
   actions: string;
 }
-interface Date {
+interface Person2 {
   key: string;
-  firstname: string;
-  lastname: string;
-  username: string;
-  startdate: string;
-  expiredate: string;
-  email: string;
-  actions: string;
+  rolename: string;
+  abbreviation: string;
+  assignedusers: string;
+  description: string;
 }
 @Component({
   selector: "app-users-roles",
@@ -56,7 +52,15 @@ export class UsersRolesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
+  listOfData2: Person2[] = [
+    {
+      key: "1",
+      rolename: "Administrator",
+      abbreviation: "Hossam",
+      assignedusers: "AhmedHossam1@gmail.com",
+      description: "200 L",
+    },
+  ];
   listOfData: Person[] = [
     {
       key: "1",
@@ -69,16 +73,4 @@ export class UsersRolesComponent implements OnInit {
       actions: "200 L",
     },
   ];
-  // listOfData2: Data[] = [
-  //   {
-  //     key: "1",
-  //     firstname: "Ahmed",
-  //     lastname: "Hossam",
-  //     username: "AhmedHossam1",
-  //     startdate: "10.10.2024",
-  //     expiredate: "10.10.2024",
-  //     email: "AhmedHossam1@gmail.com",
-  //     actions: "200 L",
-  //   },
-  // ];
 }

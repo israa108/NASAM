@@ -33,18 +33,18 @@
 
         <div class="Right">
             <button nz-button nzType="default">
-                Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
+                Filter
+                <i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
             </button>
             <button nz-button nzType="default">
-    <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
-</button>
+               <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
+          </button>
         </div>
     </div>
 </div>
 
 <!-- Driver Table -->
 <div class="container-fluid p-2">
-    <!-- Table -->
     <div class="bg-white p-3 m-0 rounded">
         <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
             <thead>
@@ -146,17 +146,17 @@
                         <!-- Type -->
                         <div class="Input">
                             <div class="FieldLabel">Type</div>
-                            <nz-select [ngModel]="'Type'" style="width: 100%;">
-                                <nz-option [nzLabel]="'Type'" [nzValue]="'Type'"></nz-option>
-                                <nz-option [nzLabel]="'Car'" [nzValue]="'Car'"></nz-option>
+                            <nz-select ngModel="Type">
+                                <nz-option nzValue="type" nzLabel="Type"></nz-option>
+                                <nz-option nzValue="car" nzLabel="Car"></nz-option>
                             </nz-select>
                         </div>
 
                         <!-- Subtype -->
                         <div class="Input">
                             <div class="FieldLabel">Subtype</div>
-                            <nz-select [ngModel]="'Subtype'" style="width: 100%;">
-                                <nz-option [nzLabel]="'Subtype'" [nzValue]="'Subtype'"></nz-option>
+                            <nz-select ngModel="Subtype" style="width: 100%;">
+                                <nz-option nzValue="subtype" nzLabel="Subtype"></nz-option>
                             </nz-select>
                         </div>
                     </div>
@@ -165,16 +165,17 @@
                         <!-- Model -->
                         <div class="Input">
                             <div class="FieldLabel">Model</div>
-                            <nz-select [ngModel]="'Model'" style="width: 100%;">
-                                <nz-option [nzLabel]="'Model'" [nzValue]="'Model'"></nz-option>
+                            <nz-select ngModel="Model" style="width: 100%;">
+                                <nz-option nzValue="model" nzLabel="Model"></nz-option>
+
                             </nz-select>
                         </div>
 
                         <!-- Depot -->
                         <div class="Input">
                             <div class="FieldLabel">Depot</div>
-                            <nz-select [ngModel]="'Depot'" style="width: 100%;">
-                                <nz-option [nzLabel]="'Depot'" [nzValue]="'Depot'"></nz-option>
+                            <nz-select ngModel="Depot" style="width: 100%;">
+                                <nz-option nzValue="depot" nzLabel="Depot"></nz-option>
                             </nz-select>
                         </div>
                     </div>
@@ -183,8 +184,8 @@
                         <!-- Additional info -->
                         <div class="Input">
                             <div class="FieldLabel">Additional info</div>
-                            <nz-select [ngModel]="'Additional info'" style="width: 100%;">
-                                <nz-option [nzLabel]="'Additional info'" [nzValue]="'Additional info'"></nz-option>
+                            <nz-select ngModel="Additional info" style="width: 100%;">
+                                <nz-option nzValue="additional info" nzLabel="Additional info"></nz-option>
                             </nz-select>
                         </div>
                     </div>
@@ -342,7 +343,8 @@
                         <!-- Fuel grade -->
                         <div class="Input">
                             <div class="FieldLabel">Expiry date</div>
-                            <input nz-input placeholder="612335" type="text" />
+                            <p-calendar inputId="basic" [(ngModel)]="date1">
+                            </p-calendar>
                         </div>
                     </div>
 

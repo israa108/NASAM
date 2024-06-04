@@ -63,6 +63,17 @@
     padding: 15px;
 }
 
+::ng-deep .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #A424B4;
+    border-color: #A424B4;
+}
+
+::ng-deep .ant-checkbox-input:focus+.ant-checkbox-inner,
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner {
+    border-color: #A424B4;
+}
+
 ::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #A424B4;
     text-shadow: 0 0 .25px currentcolor;

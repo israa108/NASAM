@@ -17,160 +17,132 @@
             <button nz-button nzType="primary" (click)="open()">Add New User</button>
         </div>
     </div>
-</div>
+    <!-- Header -->
+    <div class="title-top bg-white">
+        <nz-tabset>
+            <!-- Users -->
+            <nz-tab nzTitle="Users">
+                <div class="container-fluid p-2">
+                    <div class="row gy-3">
+                        <div class="col-12">
+                            <div class="bg-white m-0 rounded">
+                                <div class="Toolbar">
+                                    <nz-input-group [nzSuffix]=" suffixIconSearch" style="width: 200px;">
+                                        <input type="text" nz-input placeholder="Search..." />
+                                    </nz-input-group>
+                                    <ng-template #suffixIconSearch>
+                                        <span nz-icon nzType="search"></span>
+                                    </ng-template>
 
-<!-- Header -->
-<div class="title-top bg-white">
-    <nz-tabset>
-        <!-- Users -->
-        <nz-tab nzTitle="Users">
-            <div class="container-fluid p-2">
-                <div class="row gy-3">
-                    <div class="col-12">
-                        <div class="bg-white m-0 rounded">
-                            <div class="Toolbar">
-                                <nz-input-group [nzSuffix]=" suffixIconSearch" style="width: 200px;">
-                                    <input type="text" nz-input placeholder="Search..." />
-                                </nz-input-group>
-                                <ng-template #suffixIconSearch>
-                                    <span nz-icon nzType="search"></span>
-                                </ng-template>
-
-                                <div class="Right">
-                                    <button nz-button nzType="default">
+                                    <div class="Right">
+                                        <button nz-button nzType="default">
                             Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
                         </button>
-                                    <button nz-button nzType="default">
+                                        <button nz-button nzType="default">
                 <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
             </button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Table -->
-                            <div class="table-responsive">
-                                <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
-                                    <thead>
-                                        <tr>
-                                            <th [nzChecked]="checked"></th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>User Name</th>
-                                            <th>Start Date</th>
-                                            <th>Expire Date</th>
-                                            <th>Email</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let data of basicTable.data">
-                                            <td [nzChecked]="checked"></td>
-                                            <td style="color: #1D4ED8;">{{ data.firstname }}</td>
-                                            <td>{{ data.lastname }}</td>
-                                            <td>{{ data.username }}</td>
-                                            <td>{{ data.startdate }}</td>
-                                            <td>{{ data.expiredate }}</td>
-                                            <td>{{ data.email }}</td>
-                                            <td>{{ data.actions }}</td>
-                                        </tr>
-                                    </tbody>
-                                </nz-table>
-
-                                <!-- <p-table [value]="listOfData">
-                        <ng-template pTemplate="header">
-                            <tr>
-                                <th [nzChecked]="checked "></th>
-                                <th>Vehicle ID</th>
-                                <th>Real-time location</th>
-                                <th>Start Time</th>
-                                <th>End time</th>
-                                <th>Distance travelled</th>
-                                <th>Violated geofences</th>
-                                <th>Fuel consumed</th>
-                                <th>Fuel efficiency</th>
-                            </tr>
-                        </ng-template>
-                        <ng-template pTemplate="body" let-data>
-                            <tr>
-                                <td [nzChecked]="checked "></td>
-                                <td style="color: #1D4ED8;">{{ data.vehicle }}</td>
-                                <td>{{ data.realtime }}</td>
-                                <td>{{ data.start }}</td>
-                                <td>{{ data.end }}</td>
-                                <td>{{ data.distance }}</td>
-                                <td>{{ data.Violated }}</td>
-                                <td>{{ data.consumed }}</td>
-                                <td>{{ data.efficiency }}</td>
-                            </tr>
-                        </ng-template>
-                    </p-table> -->
+                                <!-- Table -->
+                                <div class="table-responsive">
+                                    <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+                                        <thead>
+                                            <tr>
+                                                <th [nzChecked]="checked"></th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>User Name</th>
+                                                <th>Start Date</th>
+                                                <th>Expire Date</th>
+                                                <th>Email</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let data of basicTable.data">
+                                                <td [nzChecked]="checked"></td>
+                                                <td style="color: #1D4ED8;">{{ data.firstname }}</td>
+                                                <td>{{ data.lastname }}</td>
+                                                <td>{{ data.username }}</td>
+                                                <td>{{ data.startdate }}</td>
+                                                <td>{{ data.expiredate }}</td>
+                                                <td>{{ data.email }}</td>
+                                                <td>{{ data.actions }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </nz-table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nz-tab>
+            </nz-tab>
 
-        <!-- Roles -->
-        <nz-tab nzTitle="Roles">
-            <div class="container-fluid p-2">
-                <div class="row gy-3">
-                    <div class="col-12">
-                        <div class="bg-white m-0 rounded">
-                            <div class="Toolbar">
-                                <nz-input-group [nzSuffix]=" suffixIconSearch" style="width: 200px;">
-                                    <input type="text" nz-input placeholder="Search..." />
-                                </nz-input-group>
-                                <ng-template #suffixIconSearch>
-                                    <span nz-icon nzType="search"></span>
-                                </ng-template>
+            <!-- Roles -->
+            <nz-tab nzTitle="Roles">
+                <div class="container-fluid p-2">
+                    <div class="row gy-3">
+                        <div class="col-12">
+                            <div class="bg-white m-0 rounded">
+                                <div class="Toolbar">
+                                    <nz-input-group [nzSuffix]=" suffixIconSearch" style="width: 200px;">
+                                        <input type="text" nz-input placeholder="Search..." />
+                                    </nz-input-group>
+                                    <ng-template #suffixIconSearch>
+                                        <span nz-icon nzType="search"></span>
+                                    </ng-template>
 
-                                <div class="Right">
-                                    <button nz-button nzType="default">
+                                    <div class="Right">
+                                        <button nz-button nzType="default">
                                     Filter
                                     <i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
                                 </button>
-                                    <button nz-button nzType="default">
+                                        <button nz-button nzType="default">
                                     <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
                                 </button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="table-responsive">
-                                <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
-                                    <thead>
-                                        <tr>
-                                            <th [nzChecked]="checked"></th>
-                                            <th>Role Name</th>
-                                            <th>Abbreviation</th>
-                                            <th>Role permission 01</th>
-                                            <th>Role permission 02</th>
-                                            <th>Role permission 03</th>
-                                            <th>Assigned users</th>
-                                            <th>Description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let data of basicTable.data">
-                                            <td [nzChecked]="checked"></td>
-                                            <td style="color: #1D4ED8;">{{ data.rolename }}</td>
-                                            <td>{{ data.abbreviation }}</td>
-                                            <td>{{ data.role1 }}</td>
-                                            <td>{{ data.role2 }}</td>
-                                            <td>{{ data.role3 }}</td>
-                                            <td>{{ data.assignedusers }}</td>
-                                            <td>{{ data.description }}</td>
-                                        </tr>
-                                    </tbody>
-                                </nz-table>
+                                <div class="table-responsive">
+                                    <nz-table #basicTable [nzData]="listOfData2" [nzFrontPagination]="false">
+                                        <thead>
+                                            <tr>
+                                                <th [nzChecked]="checked"></th>
+                                                <th>Role Name</th>
+                                                <th>Abbreviation</th>
+                                                <th>Role permission 01</th>
+                                                <th>Role permission 02</th>
+                                                <th>Role permission 03</th>
+                                                <th>Assigned users</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let data of basicTable.data">
+                                                <td [nzChecked]="checked"></td>
+                                                <td style="color: #1D4ED8;">Administrator</td>
+                                                <td>Hossam</td>
+                                                <td [nzChecked]="checked"></td>
+                                                <td [nzChecked]="checked"></td>
+                                                <td [nzChecked]="checked"></td>
+                                                <td>AhmadHossam1@gmail.com</td>
+                                                <td>AhmadHossam1@gmail.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </nz-table>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nz-tab>
-    </nz-tabset>
+            </nz-tab>
+        </nz-tabset>
+    </div>
+
 </div>
+
 
 
 
