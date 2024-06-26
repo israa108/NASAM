@@ -3,6 +3,7 @@
     <div class="col">
         <h6 style="margin-bottom: unset">Vehicles</h6>
     </div>
+
     <!-- Header Buttons -->
     <div class="col d-flex justify-content-end">
         <div class="ButtonSet">
@@ -109,6 +110,7 @@
 
 <!-- Button Add New Vehicles -->
 <nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="true" [nzWidth]="630" [nzVisible]="visible" nzTitle="New Vehicle" [nzFooter]="footerTpl" (nzOnClose)="close()">
+
     <form nz-form *nzDrawerContent>
         <nz-tabset nzType="card">
             <!-- MAIN -->
@@ -192,6 +194,7 @@
                 </div>
 
             </nz-tab>
+
             <!-- SPECIFICATION -->
             <nz-tab nzTitle="SPECIFICATION">
                 <h6>Size</h6>
@@ -287,6 +290,7 @@
 
 
             </nz-tab>
+
             <!-- FUEL -->
             <nz-tab nzTitle="FUEL">
                 <div class="new">

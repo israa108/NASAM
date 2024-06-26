@@ -17,6 +17,7 @@
             <button nz-button nzType="primary" (click)="open()">Add New User</button>
         </div>
     </div>
+
     <!-- Header -->
     <div class="title-top bg-white">
         <nz-tabset>
@@ -36,11 +37,12 @@
 
                                     <div class="Right">
                                         <button nz-button nzType="default">
-                            Filter<i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
-                        </button>
+                                        Filter
+                                    <i class="pi pi-chevron-down" style="font-size: 10px; padding-left: 6px;"></i>
+                                        </button>
                                         <button nz-button nzType="default">
-                <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
-            </button>
+                                        <i class="pi pi-sliders-h" style="font-size: 13px;"></i>
+                                    </button>
                                     </div>
                                 </div>
 
@@ -104,6 +106,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Table -->
                                 <div class="table-responsive">
                                     <nz-table #basicTable [nzData]="listOfData2" [nzFrontPagination]="false">
                                         <thead>
@@ -214,6 +217,7 @@
                     </nz-select>
                 </div>
             </div>
+
             <div class="MultiInput">
                 <div class="Input">
                     <div class="FieldLabel">Start Date</div>
@@ -229,6 +233,7 @@
                     </nz-select>
                 </div>
             </div>
+
             <div class="MultiInput">
                 <div class="Input">
                     <div class="FieldLabel">Time Zone</div>
@@ -253,8 +258,6 @@
                     <input nz-input placeholder="Device Limit" type="text" />
                 </div>
             </div>
-
-
         </div>
 
     </form>

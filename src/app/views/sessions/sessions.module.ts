@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NzButtonModule } from "ng-zorro-antd/button";
 import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzIconModule } from "ng-zorro-antd/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatCardModule } from "@angular/material/card";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [SigninComponent, SignupComponent],
@@ -23,6 +26,9 @@ import { NzIconModule } from "ng-zorro-antd/icon";
     NzCheckboxModule,
     FormsModule,
     NzIconModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatProgressBarModule,
   ],
 })
 export class SessionsModule {}

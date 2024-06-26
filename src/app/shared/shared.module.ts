@@ -8,10 +8,16 @@ import { RoutePartsService } from "./services/route-parts.service";
 
 import { SharedComponentsModule } from "./components/shared-components.module";
 import { SharedDirectivesModule } from "./directives/shared-directives.module";
+import { AppLoaderService } from "./services/app-loader/app-loader.service";
 
 @NgModule({
   imports: [CommonModule, SharedComponentsModule, SharedDirectivesModule],
-  providers: [ThemeService, NavigationService, RoutePartsService],
+  providers: [
+    ThemeService,
+    NavigationService,
+    RoutePartsService,
+    AppLoaderService,
+  ],
   exports: [SharedComponentsModule, SharedDirectivesModule],
 })
 export class SharedModule {}
