@@ -38,6 +38,7 @@ export class SidebarSideComponent implements OnInit, OnDestroy, AfterViewInit {
       this.menuItemsSub.unsubscribe();
     }
   }
+
   toggleCollapse() {
     if (this.layoutConf.sidebarCompactToggle) {
       this.layout.publishLayoutChange({
@@ -52,6 +53,7 @@ export class SidebarSideComponent implements OnInit, OnDestroy, AfterViewInit {
       this.closeSideBar();
     }
   }
+
   openSideBar() {
     if (this.layoutConf.sidebarStyle === "compact") {
       this.layout.publishLayoutChange(
@@ -60,6 +62,7 @@ export class SidebarSideComponent implements OnInit, OnDestroy, AfterViewInit {
       );
     }
   }
+
   closeSideBar() {
     if (
       this.layoutConf.sidebarStyle === "full" &&

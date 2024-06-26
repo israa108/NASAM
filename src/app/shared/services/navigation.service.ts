@@ -11,6 +11,7 @@ interface IMenuItem {
   sub?: IChildItem[]; // Dropdown items
   tooltip?: string;
 }
+
 interface IChildItem {
   type?: string;
   name: string; // Display text
