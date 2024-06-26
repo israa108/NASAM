@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { ThemeService } from "../../services/theme.service";
 import { LayoutService } from "../../services/layout.service";
 
 @Component({
