@@ -821,3 +821,29 @@
     line-height: 16px;
     word-wrap: break-word
 }
+
+.popup-history {
+    position: absolute;
+    top: 75px;
+    left: 410px;
+    width: 368px;
+    height: 651px;
+    background: white;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px #EAEAEA solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    display: inline-flex;
+    .title-history {
+        color: #253858;
+        font-size: 16px;
+        font-family: Roboto;
+        font-weight: 600;
+        letter-spacing: 0.16px;
+        word-wrap: break-word
+    }
+}
